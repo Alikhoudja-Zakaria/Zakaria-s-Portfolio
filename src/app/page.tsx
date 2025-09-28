@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
@@ -29,7 +30,7 @@ const essentialFeatures = [
         title: 'Fast Performance',
         description: 'Performance is not an afterthought; it\'s a core feature. By leveraging modern web technologies, optimizing assets, and employing efficient coding practices, I build websites that are not only beautiful but also incredibly fast and lightweight.'
     },
-]
+];
 
 const projects = PlaceHolderImages.filter(img => img.id.startsWith('project-'));
 const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery-'));
@@ -115,6 +116,7 @@ export default function Home() {
                     My web development journey is driven by a passion for creating clean, efficient, and user-centric digital experiences. I specialize in the full stack, with a strong command of modern frameworks like React and Next.js for the front-end, and Node.js for the back-end. My philosophy is to build applications that are not just functional but also scalable, maintainable, and performant. From complex single-page applications to robust e-commerce platforms, I bring a commitment to quality and an eye for detail to every project.
                     </p>
                 </div>
+            </div>
             </section>
 
           <section id="features" className="w-full py-12 md:py-24 bg-secondary text-secondary-foreground">
