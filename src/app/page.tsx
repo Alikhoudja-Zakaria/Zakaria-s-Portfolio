@@ -20,7 +20,6 @@ const accomplishments = [
 ];
 
 const DescriptionWithFlags = ({ text }: { text: string }) => {
-    const parts = text.split(/,(?=\s(?:Algeria|U\.S\.|Qatar))/g);
     const flagMap: { [key: string]: string } = {
         'Algeria': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/20px-Flag_of_Algeria.svg.png',
         'U.S.': 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/20px-Flag_of_the_United_States.svg.png',
@@ -28,18 +27,13 @@ const DescriptionWithFlags = ({ text }: { text: string }) => {
     };
 
     const renderText = (inputText: string) => {
-        let renderedText = inputText;
-        const countryNames = Object.keys(flagMap);
-        
-        let elements = [];
+        let elements: (string | JSX.Element)[] = [];
         let lastIndex = 0;
 
-        // Create a regex to find all country names
-        const regex = new RegExp(countryNames.map(name => name.replace('.', '\\.')).join('|'), 'g');
+        const regex = new RegExp(Object.keys(flagMap).map(name => name.replace('.', '\\.')).join('|'), 'g');
         let match;
 
         while ((match = regex.exec(inputText)) !== null) {
-            // Add text before the match
             if (match.index > lastIndex) {
                 elements.push(inputText.substring(lastIndex, match.index));
             }
@@ -55,7 +49,6 @@ const DescriptionWithFlags = ({ text }: { text: string }) => {
             lastIndex = match.index + country.length;
         }
 
-        // Add any remaining text
         if (lastIndex < inputText.length) {
             elements.push(inputText.substring(lastIndex));
         }
@@ -63,7 +56,7 @@ const DescriptionWithFlags = ({ text }: { text: string }) => {
         return <>{elements}</>;
     };
 
-    return <p>{renderText(text)}</p>;
+    return <p className="text-muted-foreground">{renderText(text)}</p>;
 };
 
 const featureCategories = [
@@ -118,9 +111,9 @@ const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery
 
 export default function Home() {
   return (
-    <div className="dark">
+    <>
       <AnimatedIntro />
-      <div className="flex min-h-screen flex-col bg-background" >
+      <div className="flex min-h-screen flex-col bg-transparent" >
         <Header />
         <main className="flex-1">
         <section id="hero" className="w-full py-20 md:py-32 lg:py-40">
@@ -151,7 +144,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Key Accomplishments</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {accomplishments.map((item) => (
-                  <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-secondary/50">
+                  <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card/60 backdrop-blur-lg border border-white/20">
                     <CardHeader className="flex flex-row items-center gap-4">
                       {item.icon && <item.icon className="w-10 h-10 text-primary" />}
                       {item.imageUrl && (
@@ -183,7 +176,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="ai-glasses-details" className="w-full py-12 md:py-24 bg-secondary/80">
+          <section id="ai-glasses-details" className="w-full py-12 md:py-24 bg-secondary/30 backdrop-blur-sm">
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4">Project Spotlight: AI Glasses</h2>
@@ -221,12 +214,12 @@ export default function Home() {
             </div>
             </section>
 
-            <section id="features" className="w-full py-12 md:py-24 bg-secondary/80">
+            <section id="features" className="w-full py-12 md:py-24 bg-secondary/30 backdrop-blur-sm">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Features</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {featureCategories.map((category) => (
-                            <Card key={category.title} className="flex flex-col bg-secondary/50">
+                            <Card key={category.title} className="flex flex-col bg-card/60 backdrop-blur-lg border border-white/20">
                                 <CardHeader className="flex flex-row items-center gap-4">
                                     <category.icon className="w-10 h-10 text-primary" />
                                     <CardTitle className="font-headline">{category.title}</CardTitle>
@@ -234,7 +227,7 @@ export default function Home() {
                                 <CardContent className="flex-grow space-y-4">
                                     {category.features.map(feature => (
                                         <div key={feature.title} className="flex items-start gap-4">
-                                            <feature.icon className="w-6 h-6 text-accent shrink-0 mt-1" />
+                                            <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
                                             <div>
                                                 <h3 className="font-semibold">{feature.title}</h3>
                                                 <p className="text-sm text-muted-foreground">{feature.description}</p>
@@ -253,7 +246,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Projects</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map(project => (
-                  <Card key={project.id} className="overflow-hidden transition-shadow hover:shadow-xl bg-secondary/50">
+                  <Card key={project.id} className="overflow-hidden transition-shadow hover:shadow-xl bg-card/60 backdrop-blur-lg border border-white/20">
                     <CardHeader className="p-0">
                       <Image
                         src={project.imageUrl}
@@ -274,18 +267,18 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="gallery" className="w-full py-12 md:py-24 bg-secondary/80">
+          <section id="gallery" className="w-full py-12 md:py-24 bg-secondary/30 backdrop-blur-sm">
              <div className="container mx-auto px-4 md:px-6">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Gallery</h2>
                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                  {galleryImages.map((image) => (
-                   <div key={image.id} className="overflow-hidden rounded-lg shadow-lg">
+                   <div key={image.id} className="overflow-hidden rounded-lg shadow-lg group">
                      <Image
                        src={image.imageUrl}
                        alt={image.description}
                        width={600}
                        height={600}
-                       className="w-full h-full object-cover transition-transform transform hover:scale-105"
+                       className="w-full h-full object-cover transition-transform transform group-hover:scale-105"
                        data-ai-hint={image.imageHint}
                      />
                    </div>
@@ -297,12 +290,6 @@ export default function Home() {
         </main>
         <Footer />
       </div>
-    </div>
+    </>
   );
 }
-
-    
-
-    
-
-

@@ -1,40 +1,58 @@
+
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const NavLinks = ({ inSheet = false }: { inSheet?: boolean }) => (
-    <div className={inSheet ? 'flex flex-col space-y-4' : 'flex items-center space-x-6'}>
-        <Link href="#accomplishments" className="text-sm font-medium hover:underline underline-offset-4">Accomplishments</Link>
-        <Link href="#projects" className="text-sm font-medium hover:underline underline-offset-4">Projects</Link>
-        <Link href="#gallery" className="text-sm font-medium hover:underline underline-offset-4">Gallery</Link>
-        <Link href="#contact" className="text-sm font-medium hover:underline underline-offset-4">Contact</Link>
+    <div className={cn('flex items-center gap-6 text-sm font-medium', inSheet && 'flex-col gap-4 items-start')}>
+        <Link href="#accomplishments" className="hover:text-primary transition-colors">Accomplishments</Link>
+        <Link href="#projects" className="hover:text-primary transition-colors">Projects</Link>
+        <Link href="#gallery" className="hover:text-primary transition-colors">Gallery</Link>
+        <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
     </div>
 );
 
 export function Header() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+    <header className={cn(
+        "sticky top-0 z-40 w-full transition-all duration-300",
+        scrolled ? "border-b border-border/40 bg-background/80 backdrop-blur-xl" : "bg-transparent"
+    )}>
+      <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="font-bold font-headline text-lg">Zakaria Alikhoudja</span>
           </Link>
         </div>
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center ml-auto">
             <NavLinks />
         </nav>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex flex-1 items-center justify-end md:hidden">
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className="md:hidden">
+                    <Button variant="ghost" size="icon">
                         <Menu className="h-5 w-5" />
                         <span className="sr-only">Toggle Menu</span>
                     </Button>
                 </SheetTrigger>
-                <SheetContent side="left">
+                <SheetContent side="left" className="bg-background/90 backdrop-blur-xl">
                     <div className="flex flex-col p-4">
-                        <Link href="/" className="font-bold font-headline text-lg mb-4">Zakaria Alikhoudja</Link>
+                        <Link href="/" className="font-bold font-headline text-lg mb-8">Zakaria Alikhoudja</Link>
                         <NavLinks inSheet={true} />
                     </div>
                 </SheetContent>
