@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "project-ai-glasses",
+      "description": "A prototype of AI-powered glasses on a workbench.",
+      "imageUrl": "https://images.unsplash.com/photo-1590521193986-4779db55a9d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxBSSUyMGdsYXNzZXN8ZW58MHx8fHwxNzU5MDc1OTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "AI glasses"
+    },
+    {
+      "id": "project-robotics-arm",
+      "description": "A robotic arm assembling small components.",
+      "imageUrl": "https://images.unsplash.com/photo-1728724654223-ae890fc31f1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyb2JvdGljJTIwYXJtfGVufDB8fHx8MTc1OTA1MDYyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robotic arm"
+    },
+    {
+      "id": "project-web-dev",
+      "description": "A laptop showing lines of code for a modern website.",
+      "imageUrl": "https://images.unsplash.com/photo-1672385245363-f4e7ed05a63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb2RlJTIwbGFwdG9wfGVufDB8fHx8MTc1OTA3NTkxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code laptop"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Zakaria presenting at a conference.",
+      "imageUrl": "https://images.unsplash.com/photo-1568983268695-74a04650c8b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb25mZXJlbmNlJTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc1OTAwNTM2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "conference presentation"
+    },
+    {
+      "id": "gallery-2",
+      "description": "A picture from a United Nations event.",
+      "imageUrl": "https://images.unsplash.com/photo-1695717129117-59298b61f2d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8VU4lMjBldmVudHxlbnwwfHx8fDE3NTkwNzU5MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "UN event"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Working on a robotics project in a lab.",
+      "imageUrl": "https://images.unsplash.com/photo-1696835196629-ebfe1fb68f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyb2JvdGljcyUyMGxhYnxlbnwwfHx8fDE3NTkwNzU5MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robotics lab"
+    },
+    {
+      "id": "gallery-4",
+      "description": "A team photo from a web development hackathon.",
+      "imageUrl": "https://images.unsplash.com/photo-1563461660947-507ef49e9c47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVhbSUyMGhhY2thdGhvbnxlbnwwfHx8fDE3NTkwNzU5MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team hackathon"
+    }
+  ]
 }
