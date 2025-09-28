@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
@@ -10,13 +11,60 @@ import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock,
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
-  { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria 🇩🇿, sponsored by the U.S. 🇺🇸 Department of State, and now a member of the U.S. alumni network.' },
-  { title: 'UN Representative', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Logo_of_the_United_Nations.svg/1024px-Logo_of_the_United_Nations.svg.png', description: 'Served as a youth ambassador for Algeria 🇩🇿 at the United Nations, representing the nation in the DISEC committee.' },
+  { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State, and now a member of the U.S. alumni network.' },
+  { title: 'Representative', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Logo_of_the_United_Nations.svg/1024px-Logo_of_the_United_Nations.svg.png', description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
   { title: 'NLP Certification', icon: BrainCircuit, description: 'Certified as an NLP Coach in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
-  { title: 'Robotics', icon: Bot, description: 'Won the "Best Robot Design" prize at the FLL Robotics Competition in Qatar 🇶🇦, awarded by the Ministry of Education.' },
+  { title: 'Robotics', icon: Bot, description: 'Won the "Best Robot Design" prize at the FLL Robotics Competition in Qatar, awarded by the Ministry of Education.' },
   { title: 'AI Glasses', icon: Glasses, description: 'Developed innovative AI glasses to help disabled individuals identify and avoid environmental dangers.', seeMoreLink: '#ai-glasses-details' },
   { title: 'Web Development', icon: CodeXml, description: 'Certified Web Developer by GoMyCode and Google, specializing in building modern and scalable web solutions.', seeMoreLink: '#web-dev-details' },
 ];
+
+const DescriptionWithFlags = ({ text }: { text: string }) => {
+    const parts = text.split(/,(?=\s(?:Algeria|U\.S\.|Qatar))/g);
+    const flagMap: { [key: string]: string } = {
+        'Algeria': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/20px-Flag_of_Algeria.svg.png',
+        'U.S.': 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/20px-Flag_of_the_United_States.svg.png',
+        'Qatar': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/20px-Flag_of_Qatar.svg.png'
+    };
+
+    const renderText = (inputText: string) => {
+        let renderedText = inputText;
+        const countryNames = Object.keys(flagMap);
+        
+        let elements = [];
+        let lastIndex = 0;
+
+        // Create a regex to find all country names
+        const regex = new RegExp(countryNames.map(name => name.replace('.', '\\.')).join('|'), 'g');
+        let match;
+
+        while ((match = regex.exec(inputText)) !== null) {
+            // Add text before the match
+            if (match.index > lastIndex) {
+                elements.push(inputText.substring(lastIndex, match.index));
+            }
+
+            const country = match[0];
+            elements.push(
+                <span key={match.index} className="inline-flex items-center">
+                    {country}
+                    <Image src={flagMap[country]} alt={`${country} flag`} width={20} height={12} className="ml-1.5 inline-block" />
+                </span>
+            );
+
+            lastIndex = match.index + country.length;
+        }
+
+        // Add any remaining text
+        if (lastIndex < inputText.length) {
+            elements.push(inputText.substring(lastIndex));
+        }
+        
+        return <>{elements}</>;
+    };
+
+    return <p>{renderText(text)}</p>;
+};
 
 const featureCategories = [
     {
@@ -106,11 +154,19 @@ export default function Home() {
                   <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
                     <CardHeader className="flex flex-row items-center gap-4">
                       {item.icon && <item.icon className="w-10 h-10 text-primary" />}
-                      {item.imageUrl && <Image src={item.imageUrl} alt={`${item.title} logo`} width={40} height={40} className="object-contain"/>}
+                      {item.imageUrl && (
+                          <Image
+                            src={item.imageUrl}
+                            alt={`${item.title} logo`}
+                            width={item.title === 'Representative' ? 60 : 40}
+                            height={item.title === 'Representative' ? 60 : 40}
+                            className="object-contain"
+                          />
+                        )}
                       <CardTitle className="font-headline">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                      <p>{item.description}</p>
+                      <DescriptionWithFlags text={item.description} />
                     </CardContent>
                     {item.seeMoreLink && (
                       <CardFooter>
