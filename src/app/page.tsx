@@ -6,12 +6,12 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Award, Bot, BrainCircuit, CodeXml, Glasses, Globe, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
+import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
-  { title: 'US Alumni', icon: Award, description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State, and now a member of the U.S. alumni network.' },
-  { title: 'UN Representative', icon: Globe, description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
+  { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State, and now a member of the U.S. alumni network.' },
+  { title: 'UN Representative', imageUrl: 'https://www.citypng.com/public/uploads/preview/hd-united-nations-logo-transparent-background-701751694705906o0hqmhjbsa.png', description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
   { title: 'NLP Certification', icon: BrainCircuit, description: 'Certified as an NLP Coach in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
   { title: 'Robotics', icon: Bot, description: 'Won the "Best Robot Design" prize at the FLL Robotics Competition in Qatar, awarded by the Ministry of Education.' },
   { title: 'AI Glasses', icon: Glasses, description: 'Developed innovative AI glasses to help disabled individuals identify and avoid environmental dangers.', seeMoreLink: '#ai-glasses-details' },
@@ -105,7 +105,8 @@ export default function Home() {
                 {accomplishments.map((item) => (
                   <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
                     <CardHeader className="flex flex-row items-center gap-4">
-                      <item.icon className="w-10 h-10 text-primary" />
+                      {item.icon && <item.icon className="w-10 h-10 text-primary" />}
+                      {item.imageUrl && <Image src={item.imageUrl} alt={`${item.title} logo`} width={40} height={40} className="object-contain"/>}
                       <CardTitle className="font-headline">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
