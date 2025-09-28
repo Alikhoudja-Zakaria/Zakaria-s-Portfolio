@@ -1,4 +1,7 @@
+
+"use client";
 import { Mail, Phone, Instagram, Linkedin as LinkedinIcon } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const contactInfo = [
     {
@@ -28,6 +31,12 @@ const contactInfo = [
 ];
 
 export function Footer() {
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+  
   return (
     <footer id="contact" className="w-full py-12 bg-card text-card-foreground">
       <div className="container mx-auto px-4 md:px-6">
@@ -51,7 +60,7 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-8 text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Zakaria Alikhoudja. All rights reserved.
+            © {year} Zakaria Alikhoudja. All rights reserved.
           </p>
         </div>
       </div>
