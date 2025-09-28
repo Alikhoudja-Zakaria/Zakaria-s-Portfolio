@@ -10,12 +10,12 @@ import { Award, Bot, BrainCircuit, CodeXml, Glasses, Globe, Smartphone, Zap, Arr
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
-  { title: 'US Alumni', icon: Award, description: 'Engaged with international leadership and cultural exchange programs.' },
-  { title: 'UN Representative', icon: Globe, description: 'Represented youth voices on a global stage at the United Nations.' },
-  { title: 'NLP Certification', icon: BrainCircuit, description: 'Certified expert in Natural Language Processing, bridging human-computer interaction.' },
-  { title: 'Robotics', icon: Bot, description: 'Developed and programmed autonomous robots for various applications.' },
-  { title: 'AI Glasses', icon: Glasses, description: 'Innovated a wearable AI device to assist with daily tasks.', seeMoreLink: '#ai-glasses-details' },
-  { title: 'Web Development', icon: CodeXml, description: 'Built modern, responsive web applications with a focus on performance.', seeMoreLink: '#web-dev-details' },
+  { title: 'US Alumni', icon: Award, description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State, and now a member of the U.S. alumni network.' },
+  { title: 'UN Representative', icon: Globe, description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
+  { title: 'NLP Certification', icon: BrainCircuit, description: 'Certified as an NLP Coach in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
+  { title: 'Robotics', icon: Bot, description: 'Won the "Best Robot Design" prize at the FLL Robotics Competition in Qatar, awarded by the Ministry of Education.' },
+  { title: 'AI Glasses', icon: Glasses, description: 'Developed innovative AI glasses to help disabled individuals identify and avoid environmental dangers.', seeMoreLink: '#ai-glasses-details' },
+  { title: 'Web Development', icon: CodeXml, description: 'Certified Web Developer by GoMyCode and Google, specializing in building modern and scalable web solutions.', seeMoreLink: '#web-dev-details' },
 ];
 
 const featureCategories = [
