@@ -6,7 +6,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Award, Bot, BrainCircuit, CodeXml, Glasses, Globe, Smartphone, Zap, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight } from 'lucide-react';
+import { Award, Bot, BrainCircuit, CodeXml, Glasses, Globe, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
@@ -113,7 +113,7 @@ export default function Home() {
                     </CardContent>
                     {item.seeMoreLink && (
                       <CardFooter>
-                        <Button asChild variant="link" className="text-foreground/80 group hover:text-primary">
+                        <Button asChild variant="link" className="text-primary group">
                            <Link href={item.seeMoreLink}>
                             See More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                            </Link>
@@ -130,7 +130,7 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4">Project Spotlight: AI Glasses</h2>
-                <p className="text-lg text-secondary-foreground/80">
+                <p className="text-lg text-muted-foreground">
                   The AI Glasses project was an exploration into the potential of wearable augmented intelligence. The goal was to create a non-intrusive, voice-activated assistant that could provide real-time information, manage tasks, and enhance daily life through a seamless interface. We focused on low-power processing, natural language understanding, and a minimalist heads-up display to create a device that felt like an extension of one's own capabilities, rather than a piece of technology. This project combined hardware prototyping, embedded systems programming, and machine learning model optimization.
                 </p>
               </div>
@@ -243,3 +243,5 @@ export default function Home() {
     </>
   );
 }
+
+    
