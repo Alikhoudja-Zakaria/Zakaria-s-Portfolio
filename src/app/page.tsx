@@ -158,8 +158,8 @@ export default function Home() {
                           <Image
                             src={item.imageUrl}
                             alt={`${item.title} logo`}
-                            width={item.title === 'Representative' ? 60 : 40}
-                            height={item.title === 'Representative' ? 60 : 40}
+                            width={item.title === 'Representative' ? 80 : 40}
+                            height={item.title === 'Representative' ? 80 : 40}
                             className="object-contain"
                           />
                         )}
@@ -304,3 +304,4 @@ export default function Home() {
     
 
     
+
