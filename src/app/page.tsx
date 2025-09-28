@@ -6,8 +6,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Award, Bot, BrainCircuit, CodeXml, Glasses, Globe, Smartphone, Zap, ArrowRight } from 'lucide-react';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Award, Bot, BrainCircuit, CodeXml, Glasses, Globe, Smartphone, Zap, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
@@ -19,17 +18,51 @@ const accomplishments = [
   { title: 'Web Development', icon: CodeXml, description: 'Built modern, responsive web applications with a focus on performance.', seeMoreLink: '#web-dev-details' },
 ];
 
-const essentialFeatures = [
-    { 
-        icon: Smartphone, 
-        title: 'Responsive Layout',
-        description: 'My designs are fully responsive, ensuring a seamless experience across all devices, from mobile phones to desktop computers. I prioritize a mobile-first approach to guarantee accessibility and usability for everyone, everywhere.'
+const featureCategories = [
+    {
+        title: "Core Technical Features",
+        icon: Settings,
+        features: [
+            { icon: Monitor, title: "Responsive Design", description: "Works smoothly on desktop, tablet, and mobile." },
+            { icon: Wind, title: "Fast Performance", description: "Optimized loading times (lazy loading, minification, caching)." },
+            { icon: Lock, title: "Secure Authentication", description: "Email/password, social logins, JWT sessions." },
+            { icon: Database, title: "Database Integration", description: "Real-time or dynamic data handling (Firebase, MongoDB, SQL)." },
+            { icon: Code, title: "Scalable Architecture", description: "Clean code, modular components, reusable functions." },
+        ]
     },
-    { 
-        icon: Zap, 
-        title: 'Fast Performance',
-        description: 'Performance is not an afterthought; it\'s a core feature. By leveraging modern web technologies, optimizing assets, and employing efficient coding practices, I build websites that are not only beautiful but also incredibly fast and lightweight.'
+    {
+        title: "User Experience (UX) Features",
+        icon: Palette,
+        features: [
+            { icon: Sparkles, title: "Interactive UI", description: "Smooth animations, transitions, and hover effects." },
+            { icon: ToggleRight, title: "Dark/Light Mode Toggle", description: "Personalization for users." },
+            { icon: SlidersHorizontal, title: "Search & Filters", description: "Easy navigation of large content or product lists." },
+            { icon: Accessibility, title: "Accessibility (A11Y)", description: "Screen reader support, color contrast, keyboard navigation." },
+            { icon: Languages, title: "Multi-language Support", description: "Useful if targeting international users." },
+        ]
     },
+    {
+        title: "Advanced/Show-off Features",
+        icon: BotMessageSquare,
+        features: [
+            { icon: Bot, title: "AI Integrations", description: "Chatbots, recommendation systems, or AI-powered search." },
+            { icon: Server, title: "API Integrations", description: "Maps, weather, payment gateways, or social feeds." },
+            { icon: Zap, title: "Real-time Features", description: "Chat systems, notifications, live dashboards." },
+            { icon: ShieldCheck, title: "CMS or Admin Panel", description: "Let non-devs manage content easily." },
+            { icon: Wind, title: "Custom Animations/Scroll Effects", description: "Unique visuals that make your site feel premium." },
+        ]
+    },
+    {
+        title: "Professional Touch",
+        icon: Search,
+        features: [
+            { icon: Search, title: "SEO Optimization", description: "Proper metadata, schema, fast indexing." },
+            { icon: PieChart, title: "Analytics Integration", description: "Google Analytics, custom dashboards." },
+            { icon: Mail, title: "Email Subscription & Contact Forms", description: "With validation and database storage." },
+            { icon: GitBranch, title: "Version Control & CI/CD", description: "GitHub, Vercel, Netlify for deployment." },
+            { icon: TestTube, title: "Testing & Error Handling", description: "Unit tests, error boundaries, fallback pages." },
+        ]
+    }
 ];
 
 const projects = PlaceHolderImages.filter(img => img.id.startsWith('project-'));
@@ -39,15 +72,15 @@ export default function Home() {
   return (
     <>
       <AnimatedIntro />
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col bg-background" >
         <Header />
         <main className="flex-1">
-          <section id="hero" className="w-full py-20 md:py-32 lg:py-40 bg-primary text-primary-foreground">
+          <section id="hero" className="w-full py-20 md:py-32 lg:py-40 bg-card text-card-foreground">
             <div className="container mx-auto px-4 md:px-6 text-center">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
                 Innovator in AI, Robotics, and Web
               </h1>
-              <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl mt-4">
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl mt-4">
                 Zakaria Alikhoudja. A passionate developer and leader shaping the future of technology.
               </p>
             </div>
@@ -60,7 +93,7 @@ export default function Home() {
                 {accomplishments.map((item) => (
                   <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
                     <CardHeader className="flex flex-row items-center gap-4">
-                      <item.icon className="w-10 h-10 text-accent" />
+                      <item.icon className="w-10 h-10 text-primary" />
                       <CardTitle className="font-headline">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
@@ -68,7 +101,7 @@ export default function Home() {
                     </CardContent>
                     {item.seeMoreLink && (
                       <CardFooter>
-                        <Button asChild variant="link" className="text-foreground/80 group hover:text-foreground">
+                        <Button asChild variant="link" className="text-foreground/80 group hover:text-primary">
                            <Link href={item.seeMoreLink}>
                             See More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                            </Link>
@@ -119,36 +152,32 @@ export default function Home() {
             </div>
             </section>
 
-          <section id="features" className="w-full py-12 md:py-24 bg-secondary text-secondary-foreground">
-            <div className="container mx-auto px-4 md:px-6 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline mb-12">Essential Features</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {essentialFeatures.map(feature => (
-                    <Dialog key={feature.title}>
-                        <DialogTrigger asChild>
-                             <Card className="text-left cursor-pointer transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
+            <section id="features" className="w-full py-12 md:py-24 bg-secondary text-secondary-foreground">
+                <div className="container mx-auto px-4 md:px-6">
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Core Technical Features</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {featureCategories.map((category) => (
+                            <Card key={category.title} className="flex flex-col bg-card text-card-foreground">
                                 <CardHeader className="flex flex-row items-center gap-4">
-                                    <feature.icon className="w-10 h-10 text-accent" />
-                                    <CardTitle className="font-headline">{feature.title}</CardTitle>
+                                    <category.icon className="w-10 h-10 text-primary" />
+                                    <CardTitle className="font-headline">{category.title}</CardTitle>
                                 </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground">Click to learn more about my approach to {feature.title.toLowerCase()}.</p>
+                                <CardContent className="flex-grow space-y-4">
+                                    {category.features.map(feature => (
+                                        <div key={feature.title} className="flex items-start gap-4">
+                                            <feature.icon className="w-6 h-6 text-accent shrink-0 mt-1" />
+                                            <div>
+                                                <h3 className="font-semibold">{feature.title}</h3>
+                                                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </CardContent>
                             </Card>
-                        </DialogTrigger>
-                        <DialogContent>
-                            <DialogHeader>
-                                <DialogTitle className="font-headline flex items-center gap-2"><feature.icon className="w-6 h-6" /> {feature.title}</DialogTitle>
-                                <DialogDescription asChild>
-                                    <p className="pt-4">{feature.description}</p>
-                                </DialogDescription>
-                            </DialogHeader>
-                        </DialogContent>
-                    </Dialog>
-                ))}
-              </div>
-            </div>
-          </section>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
           <section id="projects" className="w-full py-12 md:py-24">
             <div className="container mx-auto px-4 md:px-6">

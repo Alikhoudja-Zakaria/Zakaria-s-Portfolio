@@ -29,7 +29,7 @@ const contactInfo = [
 
 export function Footer() {
   return (
-    <footer id="contact" className="w-full py-12 bg-secondary text-secondary-foreground">
+    <footer id="contact" className="w-full py-12 bg-card text-card-foreground">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline mb-8">
@@ -43,9 +43,9 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={item.ariaLabel}
-                className="flex items-center justify-center sm:justify-start gap-4 p-4 rounded-lg transition-colors hover:bg-card hover:text-card-foreground"
+                className="flex items-center justify-center sm:justify-start gap-4 p-4 rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                <item.icon className="h-6 w-6 text-accent" />
+                <item.icon className="h-6 w-6 text-primary" />
                 <span className="font-medium">{item.text}</span>
               </a>
             ))}
