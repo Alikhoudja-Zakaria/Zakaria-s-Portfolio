@@ -75,14 +75,26 @@ export default function Home() {
       <div className="flex min-h-screen flex-col bg-background" >
         <Header />
         <main className="flex-1">
-          <section id="hero" className="w-full py-20 md:py-32 lg:py-40 bg-card text-card-foreground">
-            <div className="container mx-auto px-4 md:px-6 text-center">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-                Innovator in AI, Robotics, and Web
-              </h1>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl mt-4">
-                Zakaria Alikhoudja. A passionate developer and leader shaping the future of technology.
-              </p>
+        <section id="hero" className="w-full py-20 md:py-32 lg:py-40 bg-card text-card-foreground">
+            <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-4">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
+                  Zakaria Alikhoudja
+                </h1>
+                <p className="text-lg text-muted-foreground">
+                  I’m Zakaria Alikhoudja, a 17 years old Algerian, a certified web developer with a strong focus on building modern, user-friendly, and scalable web solutions. My work ranges from creating sleek portfolio websites to developing platforms that integrate AI, real-time features, and accessibility at their core. Beyond coding, I bring leadership and problem-solving experience from robotics, innovation projects, and international programs. My goal is to use technology to create tools that make a real impact and improve people’s lives.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <Image
+                  src="https://res.cloudinary.com/dof5da1cj/image/upload/v1759076666/1738621211903_mdqxia.jpg"
+                  alt="Zakaria Alikhoudja"
+                  width={400}
+                  height={400}
+                  className="rounded-full object-cover aspect-square shadow-2xl"
+                  data-ai-hint="profile picture"
+                />
+              </div>
             </div>
           </section>
 
