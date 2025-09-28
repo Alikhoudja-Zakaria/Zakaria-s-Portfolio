@@ -10,10 +10,10 @@ import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock,
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
-  { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State, and now a member of the U.S. alumni network.' },
-  { title: 'UN Representative', imageUrl: 'https://www.citypng.com/public/uploads/preview/hd-united-nations-logo-transparent-background-701751694705906o0hqmhjbsa.png', description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
+  { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria 🇩🇿, sponsored by the U.S. 🇺🇸 Department of State, and now a member of the U.S. alumni network.' },
+  { title: 'UN Representative', imageUrl: 'https://images.seeklogo.com/logo-png/14/1/united-nations-logo-png_seeklogo-145466.png', description: 'Served as a youth ambassador for Algeria 🇩🇿 at the United Nations, representing the nation in the DISEC committee.' },
   { title: 'NLP Certification', icon: BrainCircuit, description: 'Certified as an NLP Coach in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
-  { title: 'Robotics', icon: Bot, description: 'Won the "Best Robot Design" prize at the FLL Robotics Competition in Qatar, awarded by the Ministry of Education.' },
+  { title: 'Robotics', icon: Bot, description: 'Won the "Best Robot Design" prize at the FLL Robotics Competition in Qatar 🇶🇦, awarded by the Ministry of Education.' },
   { title: 'AI Glasses', icon: Glasses, description: 'Developed innovative AI glasses to help disabled individuals identify and avoid environmental dangers.', seeMoreLink: '#ai-glasses-details' },
   { title: 'Web Development', icon: CodeXml, description: 'Certified Web Developer by GoMyCode and Google, specializing in building modern and scalable web solutions.', seeMoreLink: '#web-dev-details' },
 ];

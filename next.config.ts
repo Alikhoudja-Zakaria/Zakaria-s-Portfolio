@@ -45,6 +45,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.citypng.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.seeklogo.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
