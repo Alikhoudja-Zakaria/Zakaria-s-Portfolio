@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['"Work Sans"', 'sans-serif'],
-        headline: ['"Nerko One"', 'cursive'],
+        headline: ['"Work Sans"', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
