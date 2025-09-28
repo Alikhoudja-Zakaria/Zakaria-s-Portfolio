@@ -155,7 +155,7 @@ export default function Home() {
             <section id="features" className="w-full py-12 md:py-24 bg-secondary text-secondary-foreground">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Core Technical Features</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {featureCategories.map((category) => (
                             <Card key={category.title} className="flex flex-col bg-card text-card-foreground">
                                 <CardHeader className="flex flex-row items-center gap-4">
