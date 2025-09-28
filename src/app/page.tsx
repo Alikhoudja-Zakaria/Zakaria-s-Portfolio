@@ -118,15 +118,15 @@ const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery
 
 export default function Home() {
   return (
-    <>
+    <div className="dark">
       <AnimatedIntro />
       <div className="flex min-h-screen flex-col bg-background" >
         <Header />
         <main className="flex-1">
-        <section id="hero" className="w-full py-20 md:py-32 lg:py-40 bg-card text-card-foreground">
+        <section id="hero" className="w-full py-20 md:py-32 lg:py-40">
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline text-primary">
                   Zakaria Alikhoudja
                 </h1>
                 <p className="text-lg text-muted-foreground">
@@ -151,7 +151,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Key Accomplishments</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {accomplishments.map((item) => (
-                  <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
+                  <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-secondary/50">
                     <CardHeader className="flex flex-row items-center gap-4">
                       {item.icon && <item.icon className="w-10 h-10 text-primary" />}
                       {item.imageUrl && (
@@ -183,7 +183,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="ai-glasses-details" className="w-full py-12 md:py-24 bg-secondary text-secondary-foreground">
+          <section id="ai-glasses-details" className="w-full py-12 md:py-24 bg-secondary/80">
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4">Project Spotlight: AI Glasses</h2>
@@ -221,12 +221,12 @@ export default function Home() {
             </div>
             </section>
 
-            <section id="features" className="w-full py-12 md:py-24 bg-secondary text-secondary-foreground">
+            <section id="features" className="w-full py-12 md:py-24 bg-secondary/80">
                 <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Core Technical Features</h2>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Features</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {featureCategories.map((category) => (
-                            <Card key={category.title} className="flex flex-col bg-card text-card-foreground">
+                            <Card key={category.title} className="flex flex-col bg-secondary/50">
                                 <CardHeader className="flex flex-row items-center gap-4">
                                     <category.icon className="w-10 h-10 text-primary" />
                                     <CardTitle className="font-headline">{category.title}</CardTitle>
@@ -253,7 +253,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Projects</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map(project => (
-                  <Card key={project.id} className="overflow-hidden transition-shadow hover:shadow-xl bg-card">
+                  <Card key={project.id} className="overflow-hidden transition-shadow hover:shadow-xl bg-secondary/50">
                     <CardHeader className="p-0">
                       <Image
                         src={project.imageUrl}
@@ -274,9 +274,9 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="gallery" className="w-full py-12 md:py-24 bg-secondary">
+          <section id="gallery" className="w-full py-12 md:py-24 bg-secondary/80">
              <div className="container mx-auto px-4 md:px-6">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12 text-secondary-foreground">Gallery</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Gallery</h2>
                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                  {galleryImages.map((image) => (
                    <div key={image.id} className="overflow-hidden rounded-lg shadow-lg">
@@ -297,11 +297,12 @@ export default function Home() {
         </main>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
     
 
     
+
 
