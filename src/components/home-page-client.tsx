@@ -89,7 +89,7 @@ export function HomePageClient() {
                     Zakaria Alikhoudja
                 </h1>
                 <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white px-4">
-                    I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
+                    A 17-year-old developer from Algeria, I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
                 </p>
             </section>
           </div>
@@ -266,4 +266,3 @@ export function HomePageClient() {
     </>
   );
 }
-
