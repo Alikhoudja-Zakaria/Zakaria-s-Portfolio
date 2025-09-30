@@ -167,7 +167,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="relative z-20 bg-background" style={{backgroundImage: 'linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%)'}}>
+      <main className="relative z-20 bg-background">
         <section id="accomplishments" className="w-full py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Key Accomplishments</h2>
