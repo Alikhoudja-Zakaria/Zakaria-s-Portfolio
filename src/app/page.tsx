@@ -155,9 +155,9 @@ export default function Home() {
       </div>
 
       <main className="relative z-10">
-        <section id="hero-content" className="w-full h-screen flex items-start pt-32 bg-transparent text-white">
+        <section id="hero-content" className="w-full h-screen flex items-center bg-transparent text-white">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="md:w-2/3 lg:w-3/4">
+                <div className="md:w-1/2 lg:w-1/2">
                     <div className="space-y-4 p-8 rounded-lg bg-card/60 backdrop-blur-lg">
                         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
                             Zakaria Alikhoudja
