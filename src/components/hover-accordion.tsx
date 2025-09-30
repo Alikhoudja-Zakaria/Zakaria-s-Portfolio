@@ -8,6 +8,15 @@ import { cn } from "@/lib/utils"
 
 const HoverAccordion = ({ className, ...props }: React.ComponentProps<typeof AccordionPrimitive.Root> & { children: React.ReactNode }) => {
     const [value, setValue] = React.useState<string | undefined>();
+
+    const childrenWithProps = React.Children.map(props.children, child => {
+        if (React.isValidElement(child)) {
+            return React.cloneElement(child as React.ReactElement<any>, { 
+                onMouseEnter: () => setValue((child.props as any).value),
+             });
+        }
+        return child;
+    });
     
     return (
         <div onMouseLeave={() => setValue(undefined)}>
@@ -16,12 +25,13 @@ const HoverAccordion = ({ className, ...props }: React.ComponentProps<typeof Acc
                 value={value} 
                 onValueChange={setValue}
                 className={cn(className)}
-                {...props} 
-            />
+                collapsible
+            >
+                {childrenWithProps}
+            </AccordionPrimitive.Root>
         </div>
     )
 }
-
 
 const HoverAccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
@@ -31,14 +41,6 @@ const HoverAccordionItem = React.forwardRef<
     ref={ref}
     className={cn("border-b", className)}
     {...props}
-    onMouseEnter={() => {
-        // This is a bit of a hack to trigger the value change on the parent.
-        // It simulates a click on the trigger to open the accordion.
-        const trigger = (ref as React.RefObject<HTMLDivElement>)?.current?.querySelector('[data-radix-collection-item]') as HTMLElement;
-        if (trigger) {
-            trigger.click();
-        }
-    }}
   />
 ))
 HoverAccordionItem.displayName = "HoverAccordionItem"
@@ -79,3 +81,5 @@ const HoverAccordionContent = React.forwardRef<
 HoverAccordionContent.displayName = AccordionPrimitive.Content.displayName
 
 export { HoverAccordion, HoverAccordionItem, HoverAccordionTrigger, HoverAccordionContent }
+
+    
