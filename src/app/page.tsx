@@ -1,5 +1,4 @@
 
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
@@ -9,6 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { HoverAccordion, HoverAccordionContent, HoverAccordionItem, HoverAccordionTrigger } from '@/components/hover-accordion';
 
 
 const accomplishments = [
@@ -143,15 +143,26 @@ export default function Home() {
     <>
       <AnimatedIntro />
       <Header />
-      <main>
-        <section id="hero-content" className="w-full h-screen flex items-start pt-32 bg-background">
+      <div id="hero-background" className="fixed top-0 left-0 w-full h-screen -z-10">
+          <Image
+              src={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
+              alt="Hero Background"
+              fill
+              className="object-cover"
+              priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      <main className="relative z-10">
+        <section id="hero-content" className="w-full h-screen flex items-start pt-32 bg-transparent text-white">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="md:w-1/2 lg:w-2/3">
-                    <div className="space-y-4 p-8 rounded-lg">
-                        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline text-foreground">
+                    <div className="space-y-4 p-8 rounded-lg bg-black/30 backdrop-blur-sm">
+                        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
                             Zakaria Alikhoudja
                         </h1>
-                        <p className="text-lg text-muted-foreground">
+                        <p className="text-lg text-gray-200">
                             I’m Zakaria Alikhoudja, a 17 years old Algerian, a certified web developer with a strong focus on building modern, user-friendly, and scalable web solutions. My work ranges from creating sleek portfolio websites to developing platforms that integrate AI, real-time features, and accessibility at their core. Beyond coding, I bring leadership and problem-solving experience from robotics, innovation projects, and international programs. My goal is to use technology to create tools that make a real impact and improve people’s lives.
                         </p>
                     </div>
@@ -240,27 +251,35 @@ export default function Home() {
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Features</h2>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {featureCategories.map((category) => (
-                            <Card key={category.title} className="w-full transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
-                                <CardHeader>
-                                    <div className="flex items-center gap-4">
-                                        <category.icon className="w-10 h-10 text-primary" />
-                                        <CardTitle className="font-headline text-xl">{category.title}</CardTitle>
-                                    </div>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                                        {category.features.map(feature => (
-                                            <div key={feature.title} className="flex items-start gap-4">
-                                                <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
-                                                <div>
-                                                    <h4 className="font-semibold">{feature.title}</h4>
-                                                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                            <HoverAccordion key={category.title} type="single" collapsible className="w-full">
+                                <HoverAccordionItem value={category.title} className="border-none">
+                                    <Card className="w-full transition-transform transform hover:-translate-y-2 bg-card">
+                                        <HoverAccordionTrigger className="w-full p-0 hover:no-underline">
+                                             <CardHeader className="w-full">
+                                                <div className="flex items-center gap-4">
+                                                    <category.icon className="w-10 h-10 text-primary" />
+                                                    <CardTitle className="font-headline text-xl">{category.title}</CardTitle>
                                                 </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </Card>
+                                            </CardHeader>
+                                        </HoverAccordionTrigger>
+                                        <HoverAccordionContent>
+                                            <CardContent>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                                    {category.features.map(feature => (
+                                                        <div key={feature.title} className="flex items-start gap-4">
+                                                            <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
+                                                            <div>
+                                                                <h4 className="font-semibold">{feature.title}</h4>
+                                                                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </CardContent>
+                                        </HoverAccordionContent>
+                                    </Card>
+                                </HoverAccordionItem>
+                            </HoverAccordion>
                         ))}
                     </div>
                 </div>
@@ -320,4 +339,3 @@ export default function Home() {
     </>
   );
 }
-
