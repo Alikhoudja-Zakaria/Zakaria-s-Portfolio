@@ -246,31 +246,33 @@ export default function Home() {
             <section id="features" className="w-full py-12 md:py-24 bg-secondary/30 backdrop-blur-sm">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Features</h2>
-                    <Accordion type="single" collapsible className="w-full max-w-4xl mx-auto space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {featureCategories.map((category) => (
-                            <AccordionItem value={category.title} key={category.title} className="bg-card/60 backdrop-blur-lg border border-white/20 rounded-lg">
-                                <AccordionTrigger className="p-6 text-left hover:no-underline">
-                                    <div className="flex items-center gap-4">
-                                        <category.icon className="w-10 h-10 text-primary" />
-                                        <h3 className="font-headline text-xl">{category.title}</h3>
-                                    </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="p-6 pt-0">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                                        {category.features.map(feature => (
-                                            <div key={feature.title} className="flex items-start gap-4">
-                                                <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
-                                                <div>
-                                                    <h4 className="font-semibold">{feature.title}</h4>
-                                                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                            <Accordion key={category.title} type="single" collapsible className="w-full transition-transform transform hover:-translate-y-2 hover:shadow-xl">
+                                <AccordionItem value={category.title} className="bg-card/60 backdrop-blur-lg border border-white/20 rounded-lg overflow-hidden">
+                                    <AccordionTrigger className="p-6 text-left hover:no-underline">
+                                        <div className="flex items-center gap-4">
+                                            <category.icon className="w-10 h-10 text-primary" />
+                                            <h3 className="font-headline text-xl">{category.title}</h3>
+                                        </div>
+                                    </AccordionTrigger>
+                                    <AccordionContent className="p-6 pt-0">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                            {category.features.map(feature => (
+                                                <div key={feature.title} className="flex items-start gap-4">
+                                                    <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
+                                                    <div>
+                                                        <h4 className="font-semibold">{feature.title}</h4>
+                                                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </AccordionContent>
-                            </AccordionItem>
+                                            ))}
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
                         ))}
-                    </Accordion>
+                    </div>
                 </div>
             </section>
 
