@@ -6,6 +6,7 @@ import { AnimatedIntro } from '@/components/animated-intro';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -245,27 +246,31 @@ export default function Home() {
             <section id="features" className="w-full py-12 md:py-24 bg-secondary/30 backdrop-blur-sm">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Features</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <Accordion type="single" collapsible className="w-full max-w-4xl mx-auto space-y-4">
                         {featureCategories.map((category) => (
-                            <Card key={category.title} className="flex flex-col bg-card/60 backdrop-blur-lg border border-white/20">
-                                <CardHeader className="flex flex-row items-center gap-4">
-                                    <category.icon className="w-10 h-10 text-primary" />
-                                    <CardTitle className="font-headline">{category.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-grow space-y-4">
-                                    {category.features.map(feature => (
-                                        <div key={feature.title} className="flex items-start gap-4">
-                                            <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
-                                            <div>
-                                                <h3 className="font-semibold">{feature.title}</h3>
-                                                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                            <AccordionItem value={category.title} key={category.title} className="bg-card/60 backdrop-blur-lg border border-white/20 rounded-lg">
+                                <AccordionTrigger className="p-6 text-left hover:no-underline">
+                                    <div className="flex items-center gap-4">
+                                        <category.icon className="w-10 h-10 text-primary" />
+                                        <h3 className="font-headline text-xl">{category.title}</h3>
+                                    </div>
+                                </AccordionTrigger>
+                                <AccordionContent className="p-6 pt-0">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                        {category.features.map(feature => (
+                                            <div key={feature.title} className="flex items-start gap-4">
+                                                <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
+                                                <div>
+                                                    <h4 className="font-semibold">{feature.title}</h4>
+                                                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
-                                </CardContent>
-                            </Card>
+                                        ))}
+                                    </div>
+                                </AccordionContent>
+                            </AccordionItem>
                         ))}
-                    </div>
+                    </Accordion>
                 </div>
             </section>
 
