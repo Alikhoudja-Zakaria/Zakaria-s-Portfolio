@@ -92,7 +92,7 @@ export function HomePageClient() {
             backgroundPosition: 'center',
           }}
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="fixed inset-0 bg-black/50 z-[-1]"></div>
         <div className="relative z-10 flex items-center justify-center h-full" style={{minHeight: '100vh'}}>
           <section id="hero" className="w-full text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-white">
@@ -107,7 +107,6 @@ export function HomePageClient() {
 
         <main 
           className="relative container mx-auto px-4 md:px-6 py-24" 
-          style={{ marginTop: 'calc(100vh + 4rem)' }}
         >
             <Card className="mb-12 bg-card">
               <CardHeader>
