@@ -116,25 +116,25 @@ export default function Home() {
       <div className="flex min-h-screen flex-col bg-transparent" >
         <Header />
         <main className="flex-1">
-        <section id="hero" className="w-full py-20 md:py-32 lg:py-40">
-            <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-4">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline text-primary">
-                  Zakaria Alikhoudja
-                </h1>
-                <p className="text-lg text-muted-foreground">
-                  I’m Zakaria Alikhoudja, a 17 years old Algerian, a certified web developer with a strong focus on building modern, user-friendly, and scalable web solutions. My work ranges from creating sleek portfolio websites to developing platforms that integrate AI, real-time features, and accessibility at their core. Beyond coding, I bring leadership and problem-solving experience from robotics, innovation projects, and international programs. My goal is to use technology to create tools that make a real impact and improve people’s lives.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <Image
-                  src="https://res.cloudinary.com/dof5da1cj/image/upload/v1759076666/1738621211903_mdqxia.jpg"
-                  alt="Zakaria Alikhoudja"
-                  width={400}
-                  height={400}
-                  className="rounded-full object-cover aspect-square shadow-2xl"
-                  data-ai-hint="profile picture"
-                />
+        <section id="hero" className="relative w-full h-screen">
+          <Image
+            src="https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            className="z-0"
+          />
+          <div className="absolute inset-0 bg-black/50 z-10" />
+            <div className="relative z-20 container mx-auto px-4 md:px-6 h-full flex items-center">
+              <div className="md:w-1/2 lg:w-2/3">
+                <div className="space-y-4 bg-black/30 backdrop-blur-sm p-8 rounded-lg">
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline text-white">
+                    Zakaria Alikhoudja
+                  </h1>
+                  <p className="text-lg text-gray-200">
+                    I’m Zakaria Alikhoudja, a 17 years old Algerian, a certified web developer with a strong focus on building modern, user-friendly, and scalable web solutions. My work ranges from creating sleek portfolio websites to developing platforms that integrate AI, real-time features, and accessibility at their core. Beyond coding, I bring leadership and problem-solving experience from robotics, innovation projects, and international programs. My goal is to use technology to create tools that make a real impact and improve people’s lives.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
