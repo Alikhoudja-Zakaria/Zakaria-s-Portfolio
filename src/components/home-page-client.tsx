@@ -153,8 +153,8 @@ export function HomePageClient() {
                             <Image
                               src={item.imageUrl}
                               alt={`${item.title} logo`}
-                              width={item.title === 'UN Representative' ? 200 : 120}
-                              height={item.title === 'UN Representative' ? 200 : 120}
+                              width={item.title === 'UN Representative' ? 260 : 120}
+                              height={item.title === 'UN Representative' ? 260 : 120}
                               className="object-contain"
                             />
                           </div>
