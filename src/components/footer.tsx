@@ -1,3 +1,4 @@
+
 "use client";
 import { Mail, Phone, Instagram, Linkedin as LinkedinIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -39,7 +40,7 @@ export function Footer() {
   
   return (
     <footer id="contact" className="container mx-auto px-4 md:px-6 py-12">
-        <Card className="bg-card">
+        <Card>
             <CardHeader className="text-center">
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl">
                     Get in Touch
@@ -73,3 +74,5 @@ export function Footer() {
     </footer>
   );
 }
+
+    

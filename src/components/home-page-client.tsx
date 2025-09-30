@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
@@ -70,13 +71,33 @@ const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery
 const projectSpotlightImages = PlaceHolderImages.filter(img => img.id.startsWith('project-'));
 
 export function HomePageClient() {
+  const [scrollOpacity, setScrollOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById('hero-section');
+      if (heroSection) {
+        const heroHeight = heroSection.offsetHeight;
+        const scrollY = window.scrollY;
+        // Start fading at the beginning of scroll and be fully opaque when hero is out of view
+        const opacity = Math.min(scrollY / heroHeight, 1);
+        setScrollOpacity(opacity);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <AnimatedIntro />
       <div className="relative">
         {/* Mobile Background */}
         <div
-          className="fixed inset-0 w-full h-screen md:hidden -z-10"
+          className="fixed inset-0 w-full h-screen md:hidden -z-20"
           style={{
             backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759270120/698164c7-8539-4892-8e6e-94a20e1c8560_a2bopu.jpg')`,
             backgroundSize: 'cover',
@@ -85,16 +106,25 @@ export function HomePageClient() {
         />
         {/* Desktop Background */}
         <div
-          className="hidden md:block fixed inset-0 w-full h-screen -z-10"
+          className="hidden md:block fixed inset-0 w-full h-screen -z-20"
           style={{
             backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
-        <div className="fixed inset-0 bg-black/50 -z-10"></div>
+        <div className="fixed inset-0 bg-black/50 -z-20"></div>
+
+        {/* Progressive White Background Overlay */}
+        <div
+          className="fixed inset-0 -z-10"
+          style={{
+            backgroundColor: `hsl(var(--background))`,
+            opacity: scrollOpacity,
+          }}
+        />
         
-        <div className="relative z-10 flex items-center justify-center h-full" style={{minHeight: '100vh'}}>
+        <div id="hero-section" className="relative z-10 flex items-center justify-center h-screen">
           <section id="hero" className="w-full text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-white">
               Zakaria Alikhoudja
@@ -107,9 +137,9 @@ export function HomePageClient() {
 
 
         <main 
-          className="relative container mx-auto px-4 md:px-6 py-24" 
+          className="relative z-10 container mx-auto px-4 md:px-6 py-24"
         >
-            <Card className="mb-12 bg-card/80 backdrop-blur-sm border-white/20">
+            <Card className="mb-12">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center text-card-foreground">Key Accomplishments</CardTitle>
               </CardHeader>
@@ -117,7 +147,7 @@ export function HomePageClient() {
                 <section id="accomplishments" className="w-full">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {accomplishments.map((item) => (
-                      <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-card/80 backdrop-blur-sm border-white/20">
+                      <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                         {item.imageUrl && (
                           <div className="flex-shrink-0 p-4 bg-white/90 rounded-md">
                             <Image
@@ -140,7 +170,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-card/80 backdrop-blur-sm border-white/20">
+            <Card className="mb-12">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center text-card-foreground">Features</CardTitle>
               </CardHeader>
@@ -148,7 +178,7 @@ export function HomePageClient() {
                 <section id="features" className="w-full">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature) => (
-                      <Card key={feature.title} className="flex flex-col text-center items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-card/80 backdrop-blur-sm border-white/20">
+                      <Card key={feature.title} className="flex flex-col text-center items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                         <CardHeader>
                           <div className="flex justify-center items-center">
                             <feature.icon className="w-10 h-10 text-primary mb-4" />
@@ -165,7 +195,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
             
-            <Card className="mb-12 bg-card/80 backdrop-blur-sm border-white/20">
+            <Card className="mb-12">
               <CardContent className="pt-6">
                 <section id="ai-glasses-details" className="w-full">
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -188,7 +218,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-card/80 backdrop-blur-sm border-white/20">
+            <Card className="mb-12">
               <CardContent className="pt-6">
                 <section id="web-dev-details" className="w-full">
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -211,7 +241,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-card/80 backdrop-blur-sm border-white/20">
+            <Card className="mb-12">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center text-card-foreground">Selected Work</CardTitle>
               </CardHeader>
@@ -220,7 +250,7 @@ export function HomePageClient() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map(project => (
                         <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
-                            <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-card/80 backdrop-blur-sm border-white/20">
+                            <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                                 <CardHeader className="p-0">
                                     <Image
                                         src={project.imageUrl || ''}
@@ -248,7 +278,7 @@ export function HomePageClient() {
               </CardFooter>
             </Card>
 
-            <Card className="bg-card/80 backdrop-blur-sm border-white/20">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center text-card-foreground">Gallery</CardTitle>
               </CardHeader>
@@ -276,3 +306,5 @@ export function HomePageClient() {
     </>
   );
 }
+
+    
