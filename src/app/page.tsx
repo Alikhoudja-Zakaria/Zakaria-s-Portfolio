@@ -170,44 +170,44 @@ export default function Home() {
             </div>
         </section>
 
-        <div className="bg-background">
-            <section id="accomplishments" className="w-full py-12 md:py-24">
+        <section id="accomplishments" className="w-full py-12 md:py-24">
             <div className="container mx-auto px-4 md:px-6">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Key Accomplishments</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {accomplishments.map((item) => (
-                    <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
-                    <CardHeader className="flex flex-row items-center gap-4">
-                        {item.icon && <item.icon className="w-10 h-10 text-primary" />}
-                        {item.imageUrl && (
-                            <Image
-                            src={item.imageUrl}
-                            alt={`${item.title} logo`}
-                            width={item.title === 'Representative' ? 80 : 40}
-                            height={item.title === 'Representative' ? 80 : 40}
-                            className="object-contain"
-                            />
-                        )}
-                        <CardTitle className="font-headline">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                        <DescriptionWithFlags text={item.description} />
-                    </CardContent>
-                    {item.seeMoreLink && (
-                        <CardFooter>
-                        <Button asChild variant="link" className="text-primary group">
-                            <Link href={item.seeMoreLink}>
-                            See More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                            </Link>
-                        </Button>
-                        </CardFooter>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12 text-white">Key Accomplishments</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {accomplishments.map((item) => (
+                <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card/60 backdrop-blur-lg border border-white/20 text-white">
+                <CardHeader className="flex flex-row items-center gap-4">
+                    {item.icon && <item.icon className="w-10 h-10 text-primary" />}
+                    {item.imageUrl && (
+                        <Image
+                        src={item.imageUrl}
+                        alt={`${item.title} logo`}
+                        width={item.title === 'Representative' ? 80 : 40}
+                        height={item.title === 'Representative' ? 80 : 40}
+                        className="object-contain"
+                        />
                     )}
-                    </Card>
-                ))}
-                </div>
+                    <CardTitle className="font-headline">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                    <p className="text-gray-200">{<DescriptionWithFlags text={item.description} />}</p>
+                </CardContent>
+                {item.seeMoreLink && (
+                    <CardFooter>
+                    <Button asChild variant="link" className="text-primary group">
+                        <Link href={item.seeMoreLink}>
+                        See More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                    </Button>
+                    </CardFooter>
+                )}
+                </Card>
+            ))}
             </div>
-            </section>
+        </div>
+        </section>
 
+        <div className="bg-background">
             <section id="ai-glasses-details" className="w-full py-12 md:py-24 bg-card/50">
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div>
