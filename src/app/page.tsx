@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, CodeXml, Glasses } from 'lucide-react';
+import { Bot, BrainCircuit } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
@@ -47,15 +47,25 @@ export default function Home() {
     <>
       <AnimatedIntro />
       <main className="container mx-auto px-4 md:px-6 space-y-24 md:space-y-32">
-        <div>
-            <section id="hero" className="w-full pt-32 md:pt-48 lg:pt-56 text-center">
+        <div 
+          className="relative text-white rounded-xl overflow-hidden"
+          style={{
+              backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="relative z-10">
+            <section id="hero" className="w-full pt-32 md:pt-48 lg:pt-56 text-center pb-20">
                 <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
                     Zakaria Alikhoudja
                 </h1>
-                <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
+                <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white">
                     I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
                 </p>
             </section>
+          </div>
         </div>
 
         <div>
