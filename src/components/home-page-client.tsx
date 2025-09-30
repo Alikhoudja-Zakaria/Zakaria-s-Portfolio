@@ -4,14 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, Server, Palette, Code, Sparkles } from 'lucide-react';
+import { Bot, Code, Palette, Server, Sparkles } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { useState, useEffect } from 'react';
 
 const accomplishments = [
   { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State.' },
   { title: 'UN Representative', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Logo_of_the_United_Nations.svg/1024px-Logo_of_the_United_Nations.svg.png', description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
-  { title: 'NLP Certified', icon: BrainCircuit, description: 'Certified in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
+  { title: 'NLP Certified', imageUrl: 'https://thesocietyofnlp.org/wp-content/uploads/2024/05/LogoSocietyNLP.png', description: 'Certified in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
   { title: 'Robotics Winner', icon: Bot, description: 'Won "Best Robot Design" at the FLL Robotics Competition in Qatar.' },
 ];
 
@@ -129,7 +128,17 @@ export function HomePageClient() {
                     <div className="grid grid-rows-2 gap-8">
                       {accomplishments.slice(2, 4).map((item) => (
                         <Card key={item.title} className="flex items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
-                          {item.icon && <item.icon className="w-12 h-12 text-primary flex-shrink-0" />}
+                          {item.imageUrl ? (
+                             <div className="flex-shrink-0">
+                              <Image
+                                src={item.imageUrl}
+                                alt={`${item.title} logo`}
+                                width={80}
+                                height={80}
+                                className="object-contain"
+                              />
+                            </div>
+                          ) : item.icon && <item.icon className="w-12 h-12 text-primary flex-shrink-0" />}
                           <div>
                             <CardTitle className="text-xl font-semibold mb-2">{item.title}</CardTitle>
                             <p className="text-muted-foreground">{item.description}</p>
