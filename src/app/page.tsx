@@ -6,10 +6,11 @@ import { AnimatedIntro } from '@/components/animated-intro';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { HoverAccordion, HoverAccordionItem, HoverAccordionTrigger, HoverAccordionContent } from '@/components/hover-accordion';
+
 
 const accomplishments = [
   { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State, and now a member of the U.S. alumni network.' },
@@ -248,15 +249,15 @@ export default function Home() {
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Features</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {featureCategories.map((category) => (
-                            <Accordion key={category.title} type="single" collapsible className="w-full transition-transform transform hover:-translate-y-2 hover:shadow-xl">
-                                <AccordionItem value={category.title} className="bg-card/60 backdrop-blur-lg border border-white/20 rounded-lg overflow-hidden">
-                                    <AccordionTrigger className="p-6 text-left hover:no-underline">
+                             <HoverAccordion key={category.title} className="w-full transition-transform transform hover:-translate-y-2">
+                                <HoverAccordionItem value={category.title} className="bg-card/60 backdrop-blur-lg border border-white/20 rounded-lg overflow-hidden">
+                                    <HoverAccordionTrigger className="p-6 text-left hover:no-underline">
                                         <div className="flex items-center gap-4">
                                             <category.icon className="w-10 h-10 text-primary" />
                                             <h3 className="font-headline text-xl">{category.title}</h3>
                                         </div>
-                                    </AccordionTrigger>
-                                    <AccordionContent className="p-6 pt-0">
+                                    </HoverAccordionTrigger>
+                                    <HoverAccordionContent className="p-6 pt-0">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                                             {category.features.map(feature => (
                                                 <div key={feature.title} className="flex items-start gap-4">
@@ -268,9 +269,9 @@ export default function Home() {
                                                 </div>
                                             ))}
                                         </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                            </Accordion>
+                                    </HoverAccordionContent>
+                                </HoverAccordionItem>
+                            </HoverAccordion>
                         ))}
                     </div>
                 </div>
