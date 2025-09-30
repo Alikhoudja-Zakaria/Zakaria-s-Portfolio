@@ -23,7 +23,7 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between bg-background/80 backdrop-blur-lg rounded-xl border shadow-sm mx-auto">
         
         {/* Left Aligned: Name */}
-        <div className="flex items-center">
+        <div className="flex items-center pl-5">
           <Link href="/" className="font-bold text-lg">
             Zakaria Alikhoudja
           </Link>
