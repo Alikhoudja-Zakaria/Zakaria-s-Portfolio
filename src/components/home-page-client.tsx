@@ -69,36 +69,6 @@ const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery
 const projectSpotlightImages = PlaceHolderImages.filter(img => img.id.startsWith('project-'));
 
 export function HomePageClient() {
-  const [scroll, setScroll] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY);
-    };
-    
-    const handleResize = () => {
-      setWindowHeight(window.innerHeight);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-    
-    // Set initial values
-    handleScroll();
-    handleResize();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const animationProgress = Math.min(1, scroll / windowHeight);
-  const heroOpacity = 1 - Math.min(1, (scroll / (windowHeight * 0.8)));
-  const mainScale = 0.9 + (0.1 * animationProgress);
-  const mainMarginTop = Math.max(0, windowHeight - scroll);
-  
   return (
     <>
       <AnimatedIntro />
@@ -109,7 +79,6 @@ export function HomePageClient() {
               backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              opacity: heroOpacity,
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
@@ -127,12 +96,7 @@ export function HomePageClient() {
 
         <main 
           className="relative bg-background container mx-auto px-4 md:px-6 space-y-24 md:space-y-32" 
-          style={{ 
-            marginTop: `${mainMarginTop}px`,
-            transform: `scale(${mainScale})`,
-            borderRadius: `${1 - animationProgress * 0.8}rem`,
-            overflow: 'hidden',
-          }}
+          style={{ marginTop: '100vh' }}
         >
             <div>
                 <section id="accomplishments" className="w-full pt-16">
