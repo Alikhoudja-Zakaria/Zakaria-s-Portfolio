@@ -74,26 +74,36 @@ export function HomePageClient() {
     <>
       <AnimatedIntro />
       <div className="relative">
-        <div 
-          className="fixed inset-0 w-full h-screen text-white"
+        {/* Mobile Background */}
+        <div
+          className="fixed inset-0 w-full h-screen text-white md:hidden"
           style={{
-              backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+            backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759270120/698164c7-8539-4892-8e6e-94a20e1c8560_a2bopu.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
-        >
-          <div className="absolute inset-0 bg-black/50"></div>
-          <div className="relative z-10 flex items-center justify-center h-full">
-            <section id="hero" className="w-full text-center">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-white">
-                    Zakaria Alikhoudja
-                </h1>
-                <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white px-4">
-                    A 17-year-old developer from Algeria, I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
-                </p>
-            </section>
-          </div>
+        />
+        {/* Desktop Background */}
+        <div
+          className="hidden md:block fixed inset-0 w-full h-screen text-white"
+          style={{
+            backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative z-10 flex items-center justify-center h-full" style={{minHeight: '100vh'}}>
+          <section id="hero" className="w-full text-center">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-white">
+              Zakaria Alikhoudja
+            </h1>
+            <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white px-4">
+              A 17-year-old developer from Algeria, I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
+            </p>
+          </section>
         </div>
+
 
         <main 
           className="relative bg-background container mx-auto px-4 md:px-6 py-24" 
@@ -266,3 +276,5 @@ export function HomePageClient() {
     </>
   );
 }
+
+    
