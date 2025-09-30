@@ -84,7 +84,7 @@ const DescriptionWithFlags = ({ text }: { text: string }) => {
         return <>{elements}</>;
     };
 
-    return <p className="text-muted-foreground">{renderText(text)}</p>;
+    return <span className="text-muted-foreground">{renderText(text)}</span>;
 };
 
 const featureCategories = [
@@ -190,7 +190,7 @@ export default function Home() {
                     <CardTitle className="font-headline">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                    <p className="text-gray-200">{<DescriptionWithFlags text={item.description} />}</p>
+                    <p className="text-gray-200"><DescriptionWithFlags text={item.description} /></p>
                 </CardContent>
                 {item.seeMoreLink && (
                     <CardFooter>
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
         </div>
         </section>
-
+        
         <div className="bg-background">
             <section id="ai-glasses-details" className="w-full py-12 md:py-24 bg-card/50">
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -339,3 +339,5 @@ export default function Home() {
     </>
   );
 }
+
+    
