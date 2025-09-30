@@ -106,28 +106,28 @@ export function HomePageClient() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="grid grid-rows-2 gap-8">
                       {accomplishments.slice(0, 2).map((item) => (
-                        <Card key={item.title} className="flex flex-col items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
+                        <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-shadow duration-300 hover:shadow-lg border">
                           {item.imageUrl && (
                             <div className="flex-shrink-0">
                               <Image
                                 src={item.imageUrl}
                                 alt={`${item.title} logo`}
-                                width={120}
-                                height={120}
+                                width={item.title === 'UN Representative' ? 140 : 120}
+                                height={item.title === 'UN Representative' ? 140 : 120}
                                 className="object-contain"
                               />
                             </div>
                           )}
-                          <div className="text-center">
-                            <CardTitle className="text-xl font-semibold mb-2">{item.title}</CardTitle>
-                            <p className="text-muted-foreground">{item.description}</p>
+                          <div>
+                            <CardTitle className={`font-semibold mb-2 ${item.title === 'UN Representative' ? 'text-2xl' : 'text-xl'}`}>{item.title}</CardTitle>
+                            <p className={`text-muted-foreground ${item.title === 'UN Representative' ? 'text-base' : 'text-sm'}`}>{item.description}</p>
                           </div>
                         </Card>
                       ))}
                     </div>
                     <div className="grid grid-rows-2 gap-8">
                       {accomplishments.slice(2, 4).map((item) => (
-                        <Card key={item.title} className="flex flex-col items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
+                        <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-shadow duration-300 hover:shadow-lg border">
                           {item.imageUrl ? (
                              <div className="flex-shrink-0">
                               <Image
@@ -139,9 +139,9 @@ export function HomePageClient() {
                               />
                             </div>
                           ) : null}
-                          <div className="text-center">
+                          <div>
                             <CardTitle className="text-xl font-semibold mb-2">{item.title}</CardTitle>
-                            <p className="text-muted-foreground">{item.description}</p>
+                            <p className="text-sm text-muted-foreground">{item.description}</p>
                           </div>
                         </Card>
                       ))}
