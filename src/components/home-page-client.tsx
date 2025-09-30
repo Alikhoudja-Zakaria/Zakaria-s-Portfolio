@@ -76,7 +76,7 @@ export function HomePageClient() {
       <div className="relative">
         {/* Mobile Background */}
         <div
-          className="fixed inset-0 w-full h-screen md:hidden"
+          className="fixed inset-0 w-full h-screen md:hidden -z-10"
           style={{
             backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759270120/698164c7-8539-4892-8e6e-94a20e1c8560_a2bopu.jpg')`,
             backgroundSize: 'cover',
@@ -85,14 +85,15 @@ export function HomePageClient() {
         />
         {/* Desktop Background */}
         <div
-          className="hidden md:block fixed inset-0 w-full h-screen"
+          className="hidden md:block fixed inset-0 w-full h-screen -z-10"
           style={{
             backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
-        <div className="fixed inset-0 bg-black/50 z-[-1]"></div>
+        <div className="fixed inset-0 bg-black/50 -z-10"></div>
+        
         <div className="relative z-10 flex items-center justify-center h-full" style={{minHeight: '100vh'}}>
           <section id="hero" className="w-full text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-white">
