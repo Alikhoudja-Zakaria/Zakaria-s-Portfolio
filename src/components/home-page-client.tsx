@@ -117,7 +117,7 @@ export function HomePageClient() {
                 <section id="accomplishments" className="w-full">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {accomplishments.map((item) => (
-                      <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-shadow duration-300 hover:shadow-lg bg-card/80 backdrop-blur-sm border-white/20">
+                      <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-card/80 backdrop-blur-sm border-white/20">
                         {item.imageUrl && (
                           <div className="flex-shrink-0 p-4 bg-white/90 rounded-md">
                             <Image
@@ -148,7 +148,7 @@ export function HomePageClient() {
                 <section id="features" className="w-full">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature) => (
-                      <Card key={feature.title} className="flex flex-col text-center items-center transition-shadow duration-300 hover:shadow-lg bg-card/80 backdrop-blur-sm border-white/20">
+                      <Card key={feature.title} className="flex flex-col text-center items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-card/80 backdrop-blur-sm border-white/20">
                         <CardHeader>
                           <div className="flex justify-center items-center">
                             <feature.icon className="w-10 h-10 text-primary mb-4" />
@@ -220,7 +220,7 @@ export function HomePageClient() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map(project => (
                         <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
-                            <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg bg-card/80 backdrop-blur-sm border-white/20">
+                            <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-card/80 backdrop-blur-sm border-white/20">
                                 <CardHeader className="p-0">
                                     <Image
                                         src={project.imageUrl || ''}
@@ -262,7 +262,7 @@ export function HomePageClient() {
                             alt={image.description}
                             width={600}
                             height={600}
-                            className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-105"
+                            className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-105 group-hover:rotate-3"
                             data-ai-hint={image.imageHint}
                             />
                         </div>
