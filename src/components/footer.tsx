@@ -1,6 +1,7 @@
 "use client";
 import { Mail, Phone, Instagram, Linkedin as LinkedinIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const contactInfo = [
     {
@@ -37,32 +38,38 @@ export function Footer() {
   }, []);
   
   return (
-    <footer id="contact" className="w-full py-12 border-t mt-24">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
-            Get in Touch
-          </h2>
-          <div className="space-y-4">
-            {contactInfo.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={item.ariaLabel}
-                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary text-lg"
-              >
-                <item.icon className="h-6 w-6" />
-                <span>{item.text}</span>
-              </a>
-            ))}
-          </div>
-          <p className="mt-12 text-sm text-muted-foreground">
-            © {year} Zakaria Alikhoudja. All rights reserved.
-          </p>
-        </div>
-      </div>
+    <footer id="contact" className="container mx-auto px-4 md:px-6 py-12">
+        <Card className="bg-card">
+            <CardHeader className="text-center">
+                <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl">
+                    Get in Touch
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                <div className="flex justify-center">
+                    <div className="space-y-4">
+                        {contactInfo.map((item, index) => (
+                        <a
+                            key={index}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={item.ariaLabel}
+                            className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary text-lg"
+                        >
+                            <item.icon className="h-6 w-6" />
+                            <span>{item.text}</span>
+                        </a>
+                        ))}
+                    </div>
+                </div>
+            </CardContent>
+            <CardFooter>
+                <p className="w-full text-center text-sm text-muted-foreground">
+                    © {year} Zakaria Alikhoudja. All rights reserved.
+                </p>
+            </CardFooter>
+        </Card>
     </footer>
   );
 }
