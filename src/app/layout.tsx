@@ -1,8 +1,15 @@
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
-import './globals.css';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { Work_Sans } from 'next/font/google';
+import './globals.css';
+
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-work-sans',
+});
 
 export const metadata: Metadata = {
   title: 'Zakaria Alikhoudja Portfolio',
@@ -15,12 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" className={`${workSans.variable}`}>
       <body className="font-body antialiased">
         <Header />
         {children}

@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['"Work Sans"', 'sans-serif'],
-        headline: ['"Work Sans"', 'sans-serif'],
+        body: ['var(--font-work-sans)', 'sans-serif'],
+        headline: ['var(--font-work-sans)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
