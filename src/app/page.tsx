@@ -9,7 +9,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { HoverAccordion, HoverAccordionItem, HoverAccordionTrigger, HoverAccordionContent } from '@/components/hover-accordion';
 
 
 const accomplishments = [
@@ -144,26 +143,15 @@ export default function Home() {
     <>
       <AnimatedIntro />
       <Header />
-      <section id="hero-background" className="sticky top-0 w-full h-screen -z-10">
-        <Image
-          src="https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          className="z-0"
-        />
-        <div className="absolute inset-0 bg-black/50 z-10" />
-      </section>
-
-      <main className="relative z-20">
-        <section id="hero-content" className="w-full h-screen flex items-start pt-32 bg-transparent">
+      <main>
+        <section id="hero-content" className="w-full h-screen flex items-start pt-32 bg-background">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="md:w-1/2 lg:w-2/3">
-                    <div className="space-y-4 bg-black/30 backdrop-blur-sm p-8 rounded-lg">
-                        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline text-white">
+                    <div className="space-y-4 p-8 rounded-lg">
+                        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline text-foreground">
                             Zakaria Alikhoudja
                         </h1>
-                        <p className="text-lg text-gray-200">
+                        <p className="text-lg text-muted-foreground">
                             I’m Zakaria Alikhoudja, a 17 years old Algerian, a certified web developer with a strong focus on building modern, user-friendly, and scalable web solutions. My work ranges from creating sleek portfolio websites to developing platforms that integrate AI, real-time features, and accessibility at their core. Beyond coding, I bring leadership and problem-solving experience from robotics, innovation projects, and international programs. My goal is to use technology to create tools that make a real impact and improve people’s lives.
                         </p>
                     </div>
@@ -177,7 +165,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Key Accomplishments</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {accomplishments.map((item) => (
-                    <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card/80 backdrop-blur-lg border border-white/20">
+                    <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
                     <CardHeader className="flex flex-row items-center gap-4">
                         {item.icon && <item.icon className="w-10 h-10 text-primary" />}
                         {item.imageUrl && (
@@ -209,7 +197,7 @@ export default function Home() {
             </div>
             </section>
 
-            <section id="ai-glasses-details" className="w-full py-12 md:py-24 bg-secondary/60 backdrop-blur-sm">
+            <section id="ai-glasses-details" className="w-full py-12 md:py-24 bg-card/50">
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4">Project Spotlight: AI Glasses</h2>
@@ -247,34 +235,32 @@ export default function Home() {
             </div>
             </section>
 
-            <section id="features" className="w-full py-12 md:py-24 bg-secondary/60 backdrop-blur-sm">
+            <section id="features" className="w-full py-12 md:py-24 bg-card/50">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Features</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {featureCategories.map((category) => (
-                                <HoverAccordion key={category.title} className="w-full transition-transform transform hover:-translate-y-2">
-                                <HoverAccordionItem value={category.title} className="bg-card/80 backdrop-blur-lg border border-white/20 rounded-lg overflow-hidden">
-                                    <HoverAccordionTrigger className="p-6 text-left hover:no-underline">
-                                        <div className="flex items-center gap-4">
-                                            <category.icon className="w-10 h-10 text-primary" />
-                                            <h3 className="font-headline text-xl">{category.title}</h3>
-                                        </div>
-                                    </HoverAccordionTrigger>
-                                    <HoverAccordionContent className="p-6 pt-0">
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                                            {category.features.map(feature => (
-                                                <div key={feature.title} className="flex items-start gap-4">
-                                                    <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
-                                                    <div>
-                                                        <h4 className="font-semibold">{feature.title}</h4>
-                                                        <p className="text-sm text-muted-foreground">{feature.description}</p>
-                                                    </div>
+                            <Card key={category.title} className="w-full transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card">
+                                <CardHeader>
+                                    <div className="flex items-center gap-4">
+                                        <category.icon className="w-10 h-10 text-primary" />
+                                        <CardTitle className="font-headline text-xl">{category.title}</CardTitle>
+                                    </div>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                        {category.features.map(feature => (
+                                            <div key={feature.title} className="flex items-start gap-4">
+                                                <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
+                                                <div>
+                                                    <h4 className="font-semibold">{feature.title}</h4>
+                                                    <p className="text-sm text-muted-foreground">{feature.description}</p>
                                                 </div>
-                                            ))}
-                                        </div>
-                                    </HoverAccordionContent>
-                                </HoverAccordionItem>
-                            </HoverAccordion>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </CardContent>
+                            </Card>
                         ))}
                     </div>
                 </div>
@@ -286,7 +272,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map(project => (
                     <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg group">
-                        <Card className="h-full overflow-hidden transition-shadow hover:shadow-xl bg-card/80 backdrop-blur-lg border border-white/20">
+                        <Card className="h-full overflow-hidden transition-shadow hover:shadow-xl bg-card">
                             <CardHeader className="p-0">
                             <Image
                                 src={project.imageUrl}
@@ -308,7 +294,7 @@ export default function Home() {
             </div>
             </section>
 
-            <section id="gallery" className="w-full py-12 md:py-24 bg-secondary/60 backdrop-blur-sm">
+            <section id="gallery" className="w-full py-12 md:py-24 bg-card/50">
                 <div className="container mx-auto px-4 md:px-6">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Gallery</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -334,3 +320,4 @@ export default function Home() {
     </>
   );
 }
+

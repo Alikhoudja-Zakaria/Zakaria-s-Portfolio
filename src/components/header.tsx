@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from 'next/link';
@@ -18,20 +19,9 @@ const NavLinks = ({ inSheet = false }: { inSheet?: boolean }) => (
 );
 
 export function Header() {
-    const [scrolled, setScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 10);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
   return (
     <header className={cn(
-        "sticky top-0 z-40 w-full transition-all duration-300",
-        scrolled ? "border-b border-border/40 bg-background/80 backdrop-blur-xl" : "bg-transparent"
+        "sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm"
     )}>
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
@@ -50,7 +40,7 @@ export function Header() {
                         <span className="sr-only">Toggle Menu</span>
                     </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="bg-background/90 backdrop-blur-xl">
+                <SheetContent side="left" className="bg-background/95 backdrop-blur-sm">
                     <div className="flex flex-col p-4">
                         <Link href="/" className="font-bold font-headline text-lg mb-8">Zakaria Alikhoudja</Link>
                         <NavLinks inSheet={true} />

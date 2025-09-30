@@ -8,9 +8,9 @@
   }
 
   :root {
-    --background: 240 10% 97%; /* Light Gray */
+    --background: 240 100% 100%; /* White */
     --foreground: 222.2 84% 4.9%; /* Dark Blue-Gray */
-    --card: 240 10% 99%; /* Almost White */
+    --card: 240 10% 97%; /* Light Gray */
     --card-foreground: 222.2 84% 4.9%;
     --popover: 240 10% 99%;
     --popover-foreground: 222.2 84% 4.9%;
