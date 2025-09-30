@@ -2,8 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
+import { Bot, BrainCircuit, CodeXml, Glasses } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
@@ -48,122 +47,134 @@ export default function Home() {
     <>
       <AnimatedIntro />
       <main className="container mx-auto px-4 md:px-6 space-y-24 md:space-y-32">
-        <section id="hero" className="w-full pt-32 md:pt-48 lg:pt-56 text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-                Zakaria Alikhoudja
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-                I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
-            </p>
-        </section>
-
-        <section id="accomplishments" className="w-full">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center mb-12">Key Accomplishments</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {accomplishments.map((item) => (
-                <Card key={item.title} className="flex flex-col transition-shadow duration-300 hover:shadow-lg border">
-                <CardHeader className="flex flex-row items-center gap-4">
-                    {item.icon && <item.icon className="w-8 h-8 text-primary" />}
-                    {item.imageUrl && (
-                        <Image
-                        src={item.imageUrl}
-                        alt={`${item.title} logo`}
-                        width={item.title === 'UN Representative' ? 50 : 32}
-                        height={item.title === 'UN Representative' ? 50 : 32}
-                        className="object-contain"
-                        />
-                    )}
-                    <CardTitle className="text-xl font-semibold">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                    <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-                </Card>
-            ))}
-            </div>
-        </section>
-        
-        <section id="ai-glasses-details" className="w-full">
-        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Project Spotlight: AI Glasses</h2>
-                <p className="text-lg text-muted-foreground">
-                    This project explored wearable augmented intelligence, focusing on a voice-activated assistant to enhance daily life. We combined hardware prototyping, embedded systems, and machine learning to create a device that felt like an extension of one's own capabilities.
+        <div>
+            <section id="hero" className="w-full pt-32 md:pt-48 lg:pt-56 text-center">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+                    Zakaria Alikhoudja
+                </h1>
+                <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
+                    I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
                 </p>
-            </div>
-            <Image
-                src={projectSpotlightImages.find(p => p.id === 'project-ai-glasses')?.imageUrl || ''}
-                alt="AI Glasses Project"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-md"
-                data-ai-hint="AI glasses"
-            />
+            </section>
         </div>
-        </section>
 
-        <section id="web-dev-details" className="w-full">
-        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-            <Image
-                src={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
-                alt="Web Development Project"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-md order-last md:order-first"
-                data-ai-hint="code laptop"
-            />
-            <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Expertise in Web Development</h2>
-                <p className="text-lg text-muted-foreground">
-                    I specialize in full-stack development, with a strong command of React, Next.js, and Node.js. My philosophy is to build applications that are not just functional but also scalable, maintainable, and performant, with a commitment to quality and an eye for detail.
-                </p>
-            </div>
-        </div>
-        </section>
-
-        <section id="projects" className="w-full">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center mb-12">Selected Work</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map(project => (
-                <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
-                    <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg border">
-                        <CardHeader className="p-0">
+        <div>
+            <section id="accomplishments" className="w-full">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center mb-12">Key Accomplishments</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {accomplishments.map((item) => (
+                    <Card key={item.title} className="flex flex-col transition-shadow duration-300 hover:shadow-lg border">
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        {item.icon && <item.icon className="w-8 h-8 text-primary" />}
+                        {item.imageUrl && (
                             <Image
-                                src={project.imageUrl || ''}
-                                alt={project.title}
-                                width={600}
-                                height={400}
-                                className="w-full h-auto aspect-video object-cover"
-                                data-ai-hint={project.imageHint}
+                            src={item.imageUrl}
+                            alt={`${item.title} logo`}
+                            width={item.title === 'UN Representative' ? 50 : 32}
+                            height={item.title === 'UN Representative' ? 50 : 32}
+                            className="object-contain"
                             />
-                        </CardHeader>
-                        <CardContent className="p-6">
-                            <CardTitle className="mb-2 text-lg font-semibold">{project.title}</CardTitle>
-                            <CardDescription>{project.description}</CardDescription>
-                        </CardContent>
+                        )}
+                        <CardTitle className="text-xl font-semibold">{item.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                        <p className="text-muted-foreground">{item.description}</p>
+                    </CardContent>
                     </Card>
-                </Link>
-            ))}
-            </div>
-        </section>
-
-        <section id="gallery" className="w-full">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center mb-12">Gallery</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {galleryImages.map((image) => (
-                <div key={image.id} className="overflow-hidden rounded-lg group">
-                    <Image
-                    src={image.imageUrl}
-                    alt={image.description}
-                    width={600}
-                    height={600}
-                    className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-105"
-                    data-ai-hint={image.imageHint}
-                    />
-                </div>
                 ))}
+                </div>
+            </section>
+        </div>
+        
+        <div>
+            <section id="ai-glasses-details" className="w-full">
+            <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-4">
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Project Spotlight: AI Glasses</h2>
+                    <p className="text-lg text-muted-foreground">
+                        This project explored wearable augmented intelligence, focusing on a voice-activated assistant to enhance daily life. We combined hardware prototyping, embedded systems, and machine learning to create a device that felt like an extension of one's own capabilities.
+                    </p>
+                </div>
+                <Image
+                    src={projectSpotlightImages.find(p => p.id === 'project-ai-glasses')?.imageUrl || ''}
+                    alt="AI Glasses Project"
+                    width={600}
+                    height={400}
+                    className="rounded-lg shadow-md"
+                    data-ai-hint="AI glasses"
+                />
             </div>
-        </section>
+            </section>
+        </div>
+
+        <div>
+            <section id="web-dev-details" className="w-full">
+            <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
+                <Image
+                    src={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
+                    alt="Web Development Project"
+                    width={600}
+                    height={400}
+                    className="rounded-lg shadow-md order-last md:order-first"
+                    data-ai-hint="code laptop"
+                />
+                <div className="space-y-4">
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Expertise in Web Development</h2>
+                    <p className="text-lg text-muted-foreground">
+                        I specialize in full-stack development, with a strong command of React, Next.js, and Node.js. My philosophy is to build applications that are not just functional but also scalable, maintainable, and performant, with a commitment to quality and an eye for detail.
+                    </p>
+                </div>
+            </div>
+            </section>
+        </div>
+
+        <div>
+            <section id="projects" className="w-full">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center mb-12">Selected Work</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map(project => (
+                    <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
+                        <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg border">
+                            <CardHeader className="p-0">
+                                <Image
+                                    src={project.imageUrl || ''}
+                                    alt={project.title}
+                                    width={600}
+                                    height={400}
+                                    className="w-full h-auto aspect-video object-cover"
+                                    data-ai-hint={project.imageHint}
+                                />
+                            </CardHeader>
+                            <CardContent className="p-6">
+                                <CardTitle className="mb-2 text-lg font-semibold">{project.title}</CardTitle>
+                                <CardDescription>{project.description}</CardDescription>
+                            </CardContent>
+                        </Card>
+                    </Link>
+                ))}
+                </div>
+            </section>
+        </div>
+
+        <div>
+            <section id="gallery" className="w-full">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center mb-12">Gallery</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {galleryImages.map((image) => (
+                    <div key={image.id} className="overflow-hidden rounded-lg group">
+                        <Image
+                        src={image.imageUrl}
+                        alt={image.description}
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-105"
+                        data-ai-hint={image.imageHint}
+                        />
+                    </div>
+                    ))}
+                </div>
+            </section>
+        </div>
       </main>
     </>
   );
