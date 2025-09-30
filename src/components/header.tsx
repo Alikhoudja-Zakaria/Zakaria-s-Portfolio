@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
 
@@ -45,6 +45,9 @@ export function Header() {
                         </Button>
                     </SheetTrigger>
                     <SheetContent side="left" className="bg-background w-full max-w-xs">
+                        <SheetHeader className="p-6 pb-0">
+                            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                        </SheetHeader>
                         <div className="flex flex-col p-6">
                             <Link href="/" onClick={() => setSheetOpen(false)} className="font-bold text-lg mb-8">
                               Zakaria Alikhoudja
