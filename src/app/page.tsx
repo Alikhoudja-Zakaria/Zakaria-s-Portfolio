@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       <main className="relative z-20">
-        <section id="hero-content" className="w-full h-screen flex items-center bg-transparent">
+        <section id="hero-content" className="w-full h-screen flex items-start pt-32 bg-transparent">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="md:w-1/2 lg:w-2/3">
                     <div className="space-y-4 bg-black/30 backdrop-blur-sm p-8 rounded-lg">
