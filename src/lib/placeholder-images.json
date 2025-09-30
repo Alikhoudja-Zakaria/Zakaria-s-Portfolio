@@ -32,27 +32,27 @@
     },
     {
       "id": "gallery-1",
-      "description": "A person presenting at a tech conference.",
-      "imageUrl": "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "tech conference"
+      "description": "Gallery image 1",
+      "imageUrl": "https://res.cloudinary.com/dof5da1cj/image/upload/v1759269992/2025_01_10_04_05_IMG_1500_mygrj0.jpg",
+      "imageHint": "personal photo"
     },
     {
       "id": "gallery-2",
-      "description": "A modern office space with minimalist design.",
-      "imageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "modern office"
+      "description": "Gallery image 2",
+      "imageUrl": "https://res.cloudinary.com/dof5da1cj/image/upload/v1759076666/1738621211903_mdqxia.jpg",
+      "imageHint": "personal photo"
     },
     {
       "id": "gallery-3",
-      "description": "A robotics arm in a clean, brightly-lit laboratory.",
-      "imageUrl": "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "robotics lab"
+      "description": "Gallery image 3",
+      "imageUrl": "https://res.cloudinary.com/dof5da1cj/image/upload/v1759270124/aa4b326c-d48b-4f96-802c-3fa01cc3924d_xorncp.jpg",
+      "imageHint": "personal photo"
     },
     {
       "id": "gallery-4",
-      "description": "A team collaborating on a project with laptops.",
-      "imageUrl": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "team collaboration"
+      "description": "Gallery image 4",
+      "imageUrl": "https://res.cloudinary.com/dof5da1cj/image/upload/v1759269985/2024_11_02_20_48_IMG_8965_fv4ns1.jpg",
+      "imageHint": "personal photo"
     }
   ]
 }
