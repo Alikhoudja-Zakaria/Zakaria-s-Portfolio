@@ -106,10 +106,10 @@ export function HomePageClient() {
 
 
         <main 
-          className="relative bg-background container mx-auto px-4 md:px-6 py-24" 
+          className="relative container mx-auto px-4 md:px-6 py-24" 
           style={{ marginTop: 'calc(100vh + 4rem)' }}
         >
-            <Card className="mb-12">
+            <Card className="mb-12 bg-card">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Key Accomplishments</CardTitle>
               </CardHeader>
@@ -117,7 +117,7 @@ export function HomePageClient() {
                 <section id="accomplishments" className="w-full">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {accomplishments.map((item) => (
-                      <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-shadow duration-300 hover:shadow-lg">
+                      <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-shadow duration-300 hover:shadow-lg bg-card/80 backdrop-blur-sm">
                         {item.imageUrl && (
                           <div className="flex-shrink-0 p-4 bg-white/90 rounded-md">
                             <Image
@@ -140,7 +140,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12">
+            <Card className="mb-12 bg-card">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Features</CardTitle>
               </CardHeader>
@@ -148,7 +148,7 @@ export function HomePageClient() {
                 <section id="features" className="w-full">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature) => (
-                      <Card key={feature.title} className="flex flex-col text-center items-center transition-shadow duration-300 hover:shadow-lg">
+                      <Card key={feature.title} className="flex flex-col text-center items-center transition-shadow duration-300 hover:shadow-lg bg-card/80 backdrop-blur-sm">
                         <CardHeader>
                           <div className="flex justify-center items-center">
                             <feature.icon className="w-10 h-10 text-primary mb-4" />
@@ -165,7 +165,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
             
-            <Card className="mb-12">
+            <Card className="mb-12 bg-card">
               <CardContent className="pt-6">
                 <section id="ai-glasses-details" className="w-full">
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -188,7 +188,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12">
+            <Card className="mb-12 bg-card">
               <CardContent className="pt-6">
                 <section id="web-dev-details" className="w-full">
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -211,7 +211,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12">
+            <Card className="mb-12 bg-card">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Selected Work</CardTitle>
               </CardHeader>
@@ -220,7 +220,7 @@ export function HomePageClient() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map(project => (
                         <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
-                            <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+                            <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg bg-card/80 backdrop-blur-sm">
                                 <CardHeader className="p-0">
                                     <Image
                                         src={project.imageUrl || ''}
@@ -248,7 +248,7 @@ export function HomePageClient() {
               </CardFooter>
             </Card>
 
-            <Card>
+            <Card className="bg-card">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Gallery</CardTitle>
               </CardHeader>
