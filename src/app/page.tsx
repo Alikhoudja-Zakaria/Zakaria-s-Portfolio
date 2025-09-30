@@ -211,8 +211,8 @@ export default function Home() {
             <section id="ai-glasses-details" className="w-full py-12 md:py-24" style={{ backgroundColor: '#9B9B9B' }}>
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4">Project Spotlight: AI Glasses</h2>
-                <p className="text-lg text-muted-foreground">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4 text-white">Project Spotlight: AI Glasses</h2>
+                <p className="text-lg text-white">
                     The AI Glasses project was an exploration into the potential of wearable augmented intelligence. The goal was to create a non-intrusive, voice-activated assistant that could provide real-time information, manage tasks, and enhance daily life through a seamless interface. We focused on low-power processing, natural language understanding, and a minimalist heads-up display to create a device that felt like an extension of one's own capabilities, rather than a piece of technology. This project combined hardware prototyping, embedded systems programming, and machine learning model optimization.
                 </p>
                 </div>
