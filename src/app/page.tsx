@@ -19,6 +19,33 @@ const accomplishments = [
   { title: 'Web Development', icon: CodeXml, description: 'Certified Web Developer by GoMyCode and Google, specializing in building modern and scalable web solutions.', seeMoreLink: '#web-dev-details' },
 ];
 
+const projects = [
+    {
+      id: "project-group-frenchy",
+      title: "Groupe Frenchy",
+      description: "Worked as UI/UX Dev with Groupe Frenchy.",
+      imageUrl: "https://images.unsplash.com/photo-1559028006-448665bd7c20?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "https://group-frenchy.com",
+      imageHint: "corporate website"
+    },
+    {
+      id: "project-e-commerce",
+      title: "Khadidja's E-commerce",
+      description: "Worked on a small e-commerce website.",
+      imageUrl: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "https://khadidjaa.vercel.app/",
+      imageHint: "online store"
+    },
+    {
+      id: "project-portfolio-editor",
+      title: "Amine Editor Portfolio",
+      description: "Worked on a portfolio for a small independent video editor.",
+      imageUrl: "https://images.unsplash.com/photo-1626544827763-d516d7387d15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "https://amine-editor.vercel.app",
+      imageHint: "video editor portfolio"
+    }
+  ];
+
 const DescriptionWithFlags = ({ text }: { text: string }) => {
     const flagMap: { [key: string]: string } = {
         'Algeria': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/20px-Flag_of_Algeria.svg.png',
@@ -106,8 +133,9 @@ const featureCategories = [
     }
 ];
 
-const projects = PlaceHolderImages.filter(img => img.id.startsWith('project-'));
 const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery-'));
+const projectSpotlightImages = PlaceHolderImages.filter(img => img.id.startsWith('project-'));
+
 
 export default function Home() {
   return (
@@ -185,7 +213,7 @@ export default function Home() {
                 </p>
               </div>
               <Image
-                  src={projects.find(p => p.id === 'project-ai-glasses')?.imageUrl || ''}
+                  src={projectSpotlightImages.find(p => p.id === 'project-ai-glasses')?.imageUrl || ''}
                   alt="AI Glasses Project"
                   width={600}
                   height={400}
@@ -198,7 +226,7 @@ export default function Home() {
           <section id="web-dev-details" className="w-full py-12 md:py-24">
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
                  <Image
-                    src={projects.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
+                    src={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
                     alt="Web Development Project"
                     width={600}
                     height={400}
@@ -246,22 +274,24 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Projects</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map(project => (
-                  <Card key={project.id} className="overflow-hidden transition-shadow hover:shadow-xl bg-card/60 backdrop-blur-lg border border-white/20">
-                    <CardHeader className="p-0">
-                      <Image
-                        src={project.imageUrl}
-                        alt={project.description}
-                        width={600}
-                        height={400}
-                        className="w-full h-auto aspect-video object-cover"
-                        data-ai-hint={project.imageHint}
-                      />
-                    </CardHeader>
-                    <CardContent className="p-6">
-                      <CardTitle className="font-headline mb-2 capitalize">{project.id.replace('project-', '').replace('-', ' ')}</CardTitle>
-                      <CardDescription>{project.description}</CardDescription>
-                    </CardContent>
-                  </Card>
+                    <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg group">
+                        <Card className="h-full overflow-hidden transition-shadow hover:shadow-xl bg-card/60 backdrop-blur-lg border border-white/20">
+                            <CardHeader className="p-0">
+                            <Image
+                                src={project.imageUrl}
+                                alt={project.title}
+                                width={600}
+                                height={400}
+                                className="w-full h-auto aspect-video object-cover transition-transform transform group-hover:scale-105"
+                                data-ai-hint={project.imageHint}
+                            />
+                            </CardHeader>
+                            <CardContent className="p-6">
+                            <CardTitle className="font-headline mb-2">{project.title}</CardTitle>
+                            <CardDescription>{project.description}</CardDescription>
+                            </CardContent>
+                        </Card>
+                  </Link>
                 ))}
               </div>
             </div>
