@@ -112,8 +112,8 @@ export function HomePageClient() {
                               <Image
                                 src={item.imageUrl}
                                 alt={`${item.title} logo`}
-                                width={80}
-                                height={80}
+                                width={120}
+                                height={120}
                                 className="object-contain"
                               />
                             </div>
@@ -133,12 +133,12 @@ export function HomePageClient() {
                               <Image
                                 src={item.imageUrl}
                                 alt={`${item.title} logo`}
-                                width={80}
-                                height={80}
+                                width={120}
+                                height={120}
                                 className="object-contain"
                               />
                             </div>
-                          ) : item.icon && <item.icon className="w-12 h-12 text-primary flex-shrink-0" />}
+                          ) : null}
                           <div>
                             <CardTitle className="text-xl font-semibold mb-2">{item.title}</CardTitle>
                             <p className="text-muted-foreground">{item.description}</p>
@@ -282,5 +282,3 @@ export function HomePageClient() {
     </>
   );
 }
-
-    
