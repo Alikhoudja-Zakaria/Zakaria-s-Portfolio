@@ -104,28 +104,40 @@ export function HomePageClient() {
               </CardHeader>
               <CardContent>
                 <section id="accomplishments" className="w-full">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {accomplishments.map((item) => (
-                        <Card key={item.title} className="flex flex-col transition-shadow duration-300 hover:shadow-lg border">
-                        <CardHeader className="flex flex-row items-center gap-4">
-                            {item.icon && <item.icon className="w-8 h-8 text-primary" />}
-                            {item.imageUrl && (
-                                <Image
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-rows-2 gap-8">
+                      {accomplishments.slice(0, 2).map((item) => (
+                        <Card key={item.title} className="flex flex-col md:flex-row items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
+                          {item.imageUrl && (
+                            <div className="flex-shrink-0">
+                              <Image
                                 src={item.imageUrl}
                                 alt={`${item.title} logo`}
-                                width={item.title === 'UN Representative' ? 50 : 32}
-                                height={item.title === 'UN Representative' ? 50 : 32}
+                                width={80}
+                                height={80}
                                 className="object-contain"
-                                />
-                            )}
-                            <CardTitle className="text-xl font-semibold">{item.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
+                              />
+                            </div>
+                          )}
+                          <div className="text-center md:text-left">
+                            <CardTitle className="text-xl font-semibold mb-2">{item.title}</CardTitle>
                             <p className="text-muted-foreground">{item.description}</p>
-                        </CardContent>
+                          </div>
                         </Card>
-                    ))}
+                      ))}
                     </div>
+                    <div className="grid grid-rows-2 gap-8">
+                      {accomplishments.slice(2, 4).map((item) => (
+                        <Card key={item.title} className="flex items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
+                          {item.icon && <item.icon className="w-12 h-12 text-primary flex-shrink-0" />}
+                          <div>
+                            <CardTitle className="text-xl font-semibold mb-2">{item.title}</CardTitle>
+                            <p className="text-muted-foreground">{item.description}</p>
+                          </div>
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
                 </section>
               </CardContent>
             </Card>
