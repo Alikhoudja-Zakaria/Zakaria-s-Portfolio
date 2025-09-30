@@ -39,13 +39,13 @@ export function Footer() {
   }, []);
   
   return (
-    <footer id="contact" className="w-full py-12 bg-card/50">
+    <footer id="contact" className="w-full py-12 border-t mt-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline mb-8">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline mb-8">
             Get in Touch
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-2xl">
+          <div className="flex justify-center items-center gap-8 flex-wrap">
             {contactInfo.map((item, index) => (
               <a
                 key={index}
@@ -53,14 +53,14 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={item.ariaLabel}
-                className="flex items-center justify-center sm:justify-start gap-4 p-4 rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="flex items-center justify-center gap-4 p-2 rounded-lg transition-colors text-muted-foreground hover:text-primary"
               >
-                <item.icon className="h-6 w-6 text-primary" />
-                <span className="font-medium">{item.text}</span>
+                <item.icon className="h-6 w-6" />
+                <span className="font-medium sr-only">{item.text}</span>
               </a>
             ))}
           </div>
-          <p className="mt-8 text-xs text-muted-foreground">
+          <p className="mt-12 text-sm text-muted-foreground">
             © {year} Zakaria Alikhoudja. All rights reserved.
           </p>
         </div>

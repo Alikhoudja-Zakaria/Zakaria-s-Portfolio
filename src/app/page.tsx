@@ -2,13 +2,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Bot, BrainCircuit, CodeXml, Glasses, ArrowRight, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { HoverAccordion, HoverAccordionContent, HoverAccordionItem, HoverAccordionTrigger } from '@/components/hover-accordion';
 
 
 const accomplishments = [
@@ -84,7 +81,7 @@ const DescriptionWithFlags = ({ text }: { text: string }) => {
         return <>{elements}</>;
     };
 
-    return <span className="text-gray-200">{renderText(text)}</span>;
+    return <span className="text-muted-foreground">{renderText(text)}</span>;
 };
 
 const featureCategories = [
@@ -142,52 +139,33 @@ export default function Home() {
   return (
     <>
       <AnimatedIntro />
-      <Header />
-      <div id="hero-background" className="fixed top-0 left-0 w-full h-screen -z-10">
-          <Image
-              src={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
-              alt="Hero Background"
-              fill
-              className="object-cover"
-              priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-      </div>
-
-      <main className="relative z-10">
-        <section id="hero-content" className="w-full h-screen flex items-center bg-transparent text-white">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="md:w-1/2 lg:w-1/2">
-                    <div className="space-y-4 p-8 rounded-lg bg-card/60 backdrop-blur-lg">
-                        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-                            Zakaria Alikhoudja
-                        </h1>
-                        <p className="text-lg text-gray-200">
-                            I’m Zakaria Alikhoudja, a 17 years old Algerian, a certified web developer with a strong focus on building modern, user-friendly, and scalable web solutions. My work ranges from creating sleek portfolio websites to developing platforms that integrate AI, real-time features, and accessibility at their core. Beyond coding, I bring leadership and problem-solving experience from robotics, innovation projects, and international programs. My goal is to use technology to create tools that make a real impact and improve people’s lives.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <main className="container mx-auto px-4 md:px-6">
+        <section id="hero" className="w-full py-20 md:py-32 lg:py-40 text-center">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-headline">
+                Zakaria Alikhoudja
+            </h1>
+            <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
+                I’m Zakaria Alikhoudja, a 17 years old Algerian, a certified web developer with a strong focus on building modern, user-friendly, and scalable web solutions. My work ranges from creating sleek portfolio websites to developing platforms that integrate AI, real-time features, and accessibility at their core. Beyond coding, I bring leadership and problem-solving experience from robotics, innovation projects, and international programs. My goal is to use technology to create tools that make a real impact and improve people’s lives.
+            </p>
         </section>
 
         <section id="accomplishments" className="w-full py-12 md:py-24">
-            <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12 text-white">Key Accomplishments</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center font-headline mb-12">Key Accomplishments</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {accomplishments.map((item) => (
-                <Card key={item.title} className="flex flex-col transition-transform transform hover:-translate-y-2 hover:shadow-xl bg-card/60 backdrop-blur-lg border border-white/20 text-white">
+                <Card key={item.title} className="flex flex-col transition-shadow duration-300 hover:shadow-2xl">
                 <CardHeader className="flex flex-row items-center gap-4">
                     {item.icon && <item.icon className="w-10 h-10 text-primary" />}
                     {item.imageUrl && (
                         <Image
                         src={item.imageUrl}
                         alt={`${item.title} logo`}
-                        width={item.title === 'Representative' ? 80 : 40}
-                        height={item.title === 'Representative' ? 80 : 40}
+                        width={item.title === 'Representative' ? 60 : 40}
+                        height={item.title === 'Representative' ? 60 : 40}
                         className="object-contain"
                         />
                     )}
-                    <CardTitle className="font-headline">{item.title}</CardTitle>
+                    <CardTitle className="font-headline text-xl">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
                     <DescriptionWithFlags text={item.description} />
@@ -204,137 +182,125 @@ export default function Home() {
                 </Card>
             ))}
             </div>
-        </div>
         </section>
         
-        <div className="bg-background">
-            <section id="ai-glasses-details" className="w-full py-12 md:py-24" style={{ backgroundColor: '#9B9B9B' }}>
-            <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4 text-white">Project Spotlight: AI Glasses</h2>
-                <p className="text-lg text-white">
-                    The AI Glasses project was an exploration into the potential of wearable augmented intelligence. The goal was to create a non-intrusive, voice-activated assistant that could provide real-time information, manage tasks, and enhance daily life through a seamless interface. We focused on low-power processing, natural language understanding, and a minimalist heads-up display to create a device that felt like an extension of one's own capabilities, rather than a piece of technology. This project combined hardware prototyping, embedded systems programming, and machine learning model optimization.
-                </p>
-                </div>
+        <section id="ai-glasses-details" className="w-full py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline mb-4">Project Spotlight: AI Glasses</h2>
+            <p className="text-lg text-muted-foreground">
+                The AI Glasses project was an exploration into the potential of wearable augmented intelligence. The goal was to create a non-intrusive, voice-activated assistant that could provide real-time information, manage tasks, and enhance daily life through a seamless interface. We focused on low-power processing, natural language understanding, and a minimalist heads-up display to create a device that felt like an extension of one's own capabilities, rather than a piece of technology. This project combined hardware prototyping, embedded systems programming, and machine learning model optimization.
+            </p>
+            </div>
+            <Image
+                src={projectSpotlightImages.find(p => p.id === 'project-ai-glasses')?.imageUrl || ''}
+                alt="AI Glasses Project"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-xl"
+                data-ai-hint="AI glasses"
+            />
+        </div>
+        </section>
+
+        <section id="web-dev-details" className="w-full py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
                 <Image
-                    src={projectSpotlightImages.find(p => p.id === 'project-ai-glasses')?.imageUrl || ''}
-                    alt="AI Glasses Project"
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-2xl"
-                    data-ai-hint="AI glasses"
-                />
+                src={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
+                alt="Web Development Project"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-xl order-last md:order-first"
+                data-ai-hint="code laptop"
+            />
+            <div>
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline mb-4">Expertise in Web Development</h2>
+                <p className="text-lg text-muted-foreground">
+                My web development journey is driven by a passion for creating clean, efficient, and user-centric digital experiences. I specialize in the full stack, with a strong command of modern frameworks like React and Next.js for the front-end, and Node.js for the back-end. My philosophy is to build applications that are not just functional but also scalable, maintainable, and performant. From complex single-page applications to robust e-commerce platforms, I bring a commitment to quality and an eye for detail to every project.
+                </p>
             </div>
-            </section>
+        </div>
+        </section>
 
-            <section id="web-dev-details" className="w-full py-12 md:py-24">
-            <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-                    <Image
-                    src={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
-                    alt="Web Development Project"
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-2xl order-last md:order-first"
-                    data-ai-hint="code laptop"
-                />
-                <div>
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4">Expertise in Web Development</h2>
-                    <p className="text-lg text-muted-foreground">
-                    My web development journey is driven by a passion for creating clean, efficient, and user-centric digital experiences. I specialize in the full stack, with a strong command of modern frameworks like React and Next.js for the front-end, and Node.js for the back-end. My philosophy is to build applications that are not just functional but also scalable, maintainable, and performant. From complex single-page applications to robust e-commerce platforms, I bring a commitment to quality and an eye for detail to every project.
-                    </p>
-                </div>
-            </div>
-            </section>
-
-            <section id="features" className="w-full py-12 md:py-24 bg-card/50">
-                <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Features</h2>
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {featureCategories.map((category) => (
-                            <HoverAccordion key={category.title} type="single" collapsible className="w-full">
-                                <HoverAccordionItem value={category.title} className="border-none">
-                                    <Card className="w-full transition-transform transform hover:-translate-y-2 bg-card">
-                                        <HoverAccordionTrigger className="w-full p-0 hover:no-underline">
-                                             <CardHeader className="w-full">
-                                                <div className="flex items-center gap-4">
-                                                    <category.icon className="w-10 h-10 text-primary" />
-                                                    <CardTitle className="font-headline text-xl">{category.title}</CardTitle>
-                                                </div>
-                                            </CardHeader>
-                                        </HoverAccordionTrigger>
-                                        <HoverAccordionContent>
-                                            <CardContent>
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                                                    {category.features.map(feature => (
-                                                        <div key={feature.title} className="flex items-start gap-4">
-                                                            <feature.icon className="w-6 h-6 text-primary/80 shrink-0 mt-1" />
-                                                            <div>
-                                                                <h4 className="font-semibold">{feature.title}</h4>
-                                                                <p className="text-sm text-muted-foreground">{feature.description}</p>
-                                                            </div>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </CardContent>
-                                        </HoverAccordionContent>
-                                    </Card>
-                                </HoverAccordionItem>
-                            </HoverAccordion>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects" className="w-full py-12 md:py-24">
+        <section id="features" className="w-full py-12 md:py-24">
             <div className="container mx-auto px-4 md:px-6">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Projects</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {projects.map(project => (
-                    <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg group">
-                        <Card className="h-full overflow-hidden transition-shadow hover:shadow-xl bg-card">
-                            <CardHeader className="p-0">
-                            <Image
-                                src={project.imageUrl}
-                                alt={project.title}
-                                width={600}
-                                height={400}
-                                className="w-full h-auto aspect-video object-cover transition-transform transform group-hover:scale-105"
-                                data-ai-hint={project.imageHint}
-                            />
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center font-headline mb-12">Core Capabilities</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    {featureCategories.map((category) => (
+                        <Card key={category.title} className="w-full">
+                            <CardHeader>
+                                <div className="flex items-center gap-4">
+                                    <category.icon className="w-8 h-8 text-primary" />
+                                    <CardTitle className="font-headline text-xl">{category.title}</CardTitle>
+                                </div>
                             </CardHeader>
-                            <CardContent className="p-6">
-                            <CardTitle className="font-headline mb-2">{project.title}</CardTitle>
-                            <CardDescription>{project.description}</CardDescription>
+                            <CardContent>
+                                <div className="grid grid-cols-1 gap-y-4">
+                                    {category.features.map(feature => (
+                                        <div key={feature.title} className="flex items-start gap-4">
+                                            <feature.icon className="w-5 h-5 text-primary/80 shrink-0 mt-1" />
+                                            <div>
+                                                <h4 className="font-semibold text-base">{feature.title}</h4>
+                                                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </CardContent>
                         </Card>
-                    </Link>
-                ))}
-                </div>
-            </div>
-            </section>
-
-            <section id="gallery" className="w-full py-12 md:py-24 bg-card/50">
-                <div className="container mx-auto px-4 md:px-6">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center font-headline mb-12">Gallery</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {galleryImages.map((image) => (
-                    <div key={image.id} className="overflow-hidden rounded-lg shadow-lg group">
-                        <Image
-                        src={image.imageUrl}
-                        alt={image.description}
-                        width={600}
-                        height={600}
-                        className="w-full h-full object-cover transition-transform transform group-hover:scale-105"
-                        data-ai-hint={image.imageHint}
-                        />
-                    </div>
                     ))}
                 </div>
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <Footer />
+        <section id="projects" className="w-full py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center font-headline mb-12">Projects</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map(project => (
+                <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
+                    <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+                        <CardHeader className="p-0">
+                        <Image
+                            src={project.imageUrl}
+                            alt={project.title}
+                            width={600}
+                            height={400}
+                            className="w-full h-auto aspect-video object-cover transition-transform duration-300 transform group-hover:scale-105"
+                            data-ai-hint={project.imageHint}
+                        />
+                        </CardHeader>
+                        <CardContent className="p-6">
+                        <CardTitle className="font-headline mb-2 text-lg">{project.title}</CardTitle>
+                        <CardDescription>{project.description}</CardDescription>
+                        </CardContent>
+                    </Card>
+                </Link>
+            ))}
+            </div>
         </div>
+        </section>
+
+        <section id="gallery" className="w-full py-12 md:py-24">
+            <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center font-headline mb-12">Gallery</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {galleryImages.map((image) => (
+                <div key={image.id} className="overflow-hidden rounded-lg group">
+                    <Image
+                    src={image.imageUrl}
+                    alt={image.description}
+                    width={600}
+                    height={600}
+                    className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-105"
+                    data-ai-hint={image.imageHint}
+                    />
+                </div>
+                ))}
+            </div>
+            </div>
+        </section>
+
       </main>
     </>
   );
