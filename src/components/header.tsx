@@ -19,7 +19,7 @@ export function Header() {
   const [isSheetOpen, setSheetOpen] = useState(false);
 
   return (
-    <header className="sticky top-4 z-40 w-full px-4">
+    <header className="sticky top-4 z-40 w-full px-6">
       <div className="container flex h-16 items-center justify-between bg-background/80 backdrop-blur-lg rounded-xl border shadow-sm mx-auto">
         
         {/* Left Aligned: Name */}
