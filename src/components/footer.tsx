@@ -43,7 +43,7 @@ export function Footer() {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
             Get in Touch
           </h2>
-          <div className="flex justify-center items-center gap-6 flex-wrap">
+          <div className="space-y-4">
             {contactInfo.map((item, index) => (
               <a
                 key={index}
@@ -51,10 +51,10 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={item.ariaLabel}
-                className="text-muted-foreground transition-colors hover:text-primary"
+                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary text-lg"
               >
                 <item.icon className="h-6 w-6" />
-                <span className="sr-only">{item.text}</span>
+                <span>{item.text}</span>
               </a>
             ))}
           </div>
