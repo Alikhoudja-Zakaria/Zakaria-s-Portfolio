@@ -106,7 +106,7 @@ export function HomePageClient() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="grid grid-rows-2 gap-8">
                       {accomplishments.slice(0, 2).map((item) => (
-                        <Card key={item.title} className="flex flex-col md:flex-row items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
+                        <Card key={item.title} className="flex flex-col items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
                           {item.imageUrl && (
                             <div className="flex-shrink-0">
                               <Image
@@ -118,7 +118,7 @@ export function HomePageClient() {
                               />
                             </div>
                           )}
-                          <div className="text-center md:text-left">
+                          <div className="text-center">
                             <CardTitle className="text-xl font-semibold mb-2">{item.title}</CardTitle>
                             <p className="text-muted-foreground">{item.description}</p>
                           </div>
@@ -127,7 +127,7 @@ export function HomePageClient() {
                     </div>
                     <div className="grid grid-rows-2 gap-8">
                       {accomplishments.slice(2, 4).map((item) => (
-                        <Card key={item.title} className="flex items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
+                        <Card key={item.title} className="flex flex-col items-center gap-6 p-6 transition-shadow duration-300 hover:shadow-lg border">
                           {item.imageUrl ? (
                              <div className="flex-shrink-0">
                               <Image
@@ -139,7 +139,7 @@ export function HomePageClient() {
                               />
                             </div>
                           ) : null}
-                          <div>
+                          <div className="text-center">
                             <CardTitle className="text-xl font-semibold mb-2">{item.title}</CardTitle>
                             <p className="text-muted-foreground">{item.description}</p>
                           </div>
