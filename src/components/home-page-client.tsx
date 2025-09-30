@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -6,6 +7,7 @@ import { AnimatedIntro } from '@/components/animated-intro';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Code, Palette, Server, Sparkles } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Button } from '@/components/ui/button';
 
 const accomplishments = [
   { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State.' },
@@ -229,6 +231,11 @@ export function HomePageClient() {
                     </div>
                 </section>
               </CardContent>
+              <CardFooter className="flex justify-center">
+                  <Button asChild>
+                      <Link href="#contact">If you want to see more projects, contact me</Link>
+                  </Button>
+              </CardFooter>
             </Card>
 
             <Card>
@@ -259,3 +266,4 @@ export function HomePageClient() {
     </>
   );
 }
+
