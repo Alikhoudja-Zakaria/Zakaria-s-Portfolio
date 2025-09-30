@@ -109,7 +109,7 @@ export function HomePageClient() {
           className="relative container mx-auto px-4 md:px-6 py-24 text-white" 
           style={{ marginTop: '100vh' }}
         >
-            <Card className="mb-12 bg-transparent border-white/20">
+            <Card className="mb-12 bg-black/20 border-white/20">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Key Accomplishments</CardTitle>
               </CardHeader>
@@ -140,7 +140,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-transparent border-white/20">
+            <Card className="mb-12 bg-black/20 border-white/20">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Features</CardTitle>
               </CardHeader>
@@ -165,7 +165,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
             
-            <Card className="mb-12 bg-transparent border-white/20">
+            <Card className="mb-12 bg-black/20 border-white/20">
               <CardContent className="pt-6">
                 <section id="ai-glasses-details" className="w-full">
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -188,7 +188,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-transparent border-white/20">
+            <Card className="mb-12 bg-black/20 border-white/20">
               <CardContent className="pt-6">
                 <section id="web-dev-details" className="w-full">
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -211,7 +211,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-transparent border-white/20">
+            <Card className="mb-12 bg-black/20 border-white/20">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Selected Work</CardTitle>
               </CardHeader>
@@ -248,7 +248,7 @@ export function HomePageClient() {
               </CardFooter>
             </Card>
 
-            <Card className="bg-transparent border-white/20">
+            <Card className="bg-black/20 border-white/20">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Gallery</CardTitle>
               </CardHeader>
@@ -276,7 +276,3 @@ export function HomePageClient() {
     </>
   );
 }
-
-    
-
-    
