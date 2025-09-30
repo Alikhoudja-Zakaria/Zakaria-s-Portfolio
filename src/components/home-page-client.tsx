@@ -165,7 +165,7 @@ export function HomePageClient() {
                       </div>
                       <Image
                           src={projectSpotlightImages.find(p => p.id === 'project-ai-glasses')?.imageUrl || ''}
-                          alt="AI Glasses Project"
+                          alt={projectSpotlightImages.find(p => p.id === 'project-ai-glasses')?.description || 'AI Glasses Project'}
                           width={600}
                           height={400}
                           className="rounded-lg shadow-md"
@@ -182,7 +182,7 @@ export function HomePageClient() {
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
                       <Image
                           src={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.imageUrl || ''}
-                          alt="Web Development Project"
+                          alt={projectSpotlightImages.find(p => p.id === 'project-web-dev')?.description || 'Web Development Project'}
                           width={600}
                           height={400}
                           className="rounded-lg shadow-md order-last md:order-first"
