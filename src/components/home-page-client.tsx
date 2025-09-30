@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit } from 'lucide-react';
+import { Bot, BrainCircuit, Server, Palette, Lock, Database, Code, ShieldCheck, Languages, GitBranch, TestTube, Search, Wind, BotMessageSquare, Sparkles, SlidersHorizontal, Settings, Monitor, PieChart, Mail, Accessibility, ToggleRight, Zap, ArrowRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useState, useEffect } from 'react';
 
@@ -13,6 +13,29 @@ const accomplishments = [
   { title: 'UN Representative', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Logo_of_the_United_Nations.svg/1024px-Logo_of_the_United_Nations.svg.png', description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
   { title: 'NLP Certified', icon: BrainCircuit, description: 'Certified in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
   { title: 'Robotics Winner', icon: Bot, description: 'Won "Best Robot Design" at the FLL Robotics Competition in Qatar.' },
+];
+
+const features = [
+    {
+      icon: Code,
+      title: 'Clean, Modern Code',
+      description: 'I write high-quality, well-documented code using modern best practices, including React, Next.js, and TypeScript.',
+    },
+    {
+      icon: Palette,
+      title: 'Thoughtful UI/UX',
+      description: 'I design and build user-friendly interfaces with a focus on aesthetics, accessibility, and intuitive navigation.',
+    },
+    {
+      icon: Sparkles,
+      title: 'AI Integration',
+      description: 'I have experience integrating cutting-edge AI and machine learning models to create intelligent, data-driven applications.',
+    },
+    {
+      icon: Server,
+      title: 'Scalable Architecture',
+      description: 'I build robust, scalable back-end systems with Node.js and modern databases, ensuring performance and reliability.',
+    },
 ];
 
 const projects = [
@@ -92,7 +115,7 @@ export function HomePageClient() {
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 flex items-center justify-center h-full">
             <section id="hero" className="w-full text-center">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-white">
                     Zakaria Alikhoudja
                 </h1>
                 <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white px-4">
@@ -137,6 +160,27 @@ export function HomePageClient() {
                     ))}
                     </div>
                 </section>
+            </div>
+
+            <div>
+              <section id="features" className="w-full">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center mb-12">Features</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {features.map((feature) => (
+                    <Card key={feature.title} className="flex flex-col text-center items-center transition-shadow duration-300 hover:shadow-lg border">
+                      <CardHeader>
+                        <div className="flex justify-center items-center">
+                          <feature.icon className="w-10 h-10 text-primary mb-4" />
+                        </div>
+                        <CardTitle>{feature.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground">{feature.description}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </section>
             </div>
             
             <div>
