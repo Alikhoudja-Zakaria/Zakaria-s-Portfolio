@@ -10,11 +10,11 @@ export function AnimatedIntro() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1500); // Shorter duration
 
     const visibilityTimer = setTimeout(() => {
         setVisible(false);
-    }, 4000);
+    }, 2500); // Shorter duration
 
     return () => {
         clearTimeout(timer);
@@ -33,9 +33,17 @@ export function AnimatedIntro() {
         !loading && 'opacity-0'
       )}
     >
-      <h1 className="text-4xl md:text-6xl lg:text-8xl font-headline text-primary animate-zoom-in-fade-out">
+      <h1 className="text-4xl md:text-6xl font-semibold text-foreground animate-fade-in-out">
         Zakaria Alikhoudja
       </h1>
     </div>
   );
 }
+
+// Add this to tailwind.config.ts animation key
+// 'fade-in-out': {
+//   '0%, 100%': { opacity: '0' },
+//   '50%': { opacity: '1' },
+// },
+// and this to keyframes
+// 'fade-in-out': 'fade-in-out 2.5s ease-in-out forwards',

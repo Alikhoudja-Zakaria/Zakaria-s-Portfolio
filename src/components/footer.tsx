@@ -1,5 +1,3 @@
-
-
 "use client";
 import { Mail, Phone, Instagram, Linkedin as LinkedinIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -42,10 +40,10 @@ export function Footer() {
     <footer id="contact" className="w-full py-12 border-t mt-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline mb-8">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
             Get in Touch
           </h2>
-          <div className="flex justify-center items-center gap-8 flex-wrap">
+          <div className="flex justify-center items-center gap-6 flex-wrap">
             {contactInfo.map((item, index) => (
               <a
                 key={index}
@@ -53,10 +51,10 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={item.ariaLabel}
-                className="flex items-center justify-center gap-4 p-2 rounded-lg transition-colors text-muted-foreground hover:text-primary"
+                className="text-muted-foreground transition-colors hover:text-primary"
               >
                 <item.icon className="h-6 w-6" />
-                <span className="font-medium sr-only">{item.text}</span>
+                <span className="sr-only">{item.text}</span>
               </a>
             ))}
           </div>

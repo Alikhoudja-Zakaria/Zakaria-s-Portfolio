@@ -2,45 +2,57 @@
   "placeholderImages": [
     {
       "id": "project-ai-glasses",
-      "description": "A prototype of AI-powered glasses on a workbench.",
-      "imageUrl": "https://res.cloudinary.com/dof5da1cj/image/upload/v1759252667/Airbrush-image-extender_guarea.jpg",
-      "imageHint": "AI glasses"
-    },
-    {
-      "id": "project-robotics-arm",
-      "description": "A robotic arm assembling small components.",
-      "imageUrl": "https://images.unsplash.com/photo-1728724654223-ae890fc31f1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyb2JvdGljJTIwYXJtfGVufDB8fHx8MTc1OTA1MDYyMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "robotic arm"
+      "description": "A sleek pair of modern smart glasses on a clean background.",
+      "imageUrl": "https://images.unsplash.com/photo-1593344484962-796b94ac5a44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "smart glasses"
     },
     {
       "id": "project-web-dev",
-      "description": "A laptop showing lines of code for a modern website.",
-      "imageUrl": "https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg",
+      "description": "A laptop showing lines of code for a modern website, with a clean aesthetic.",
+      "imageUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "code laptop"
     },
     {
+      "id": "project-corporate-site",
+      "description": "A professional corporate website displayed on a laptop screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "corporate website"
+    },
+    {
+      "id": "project-ecommerce-site",
+      "description": "A clean and modern e-commerce website interface.",
+      "imageUrl": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "e-commerce"
+    },
+    {
+      "id": "project-portfolio-site",
+      "description": "A creative portfolio website for a video editor.",
+      "imageUrl": "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "creative portfolio"
+    },
+    {
       "id": "gallery-1",
-      "description": "Zakaria presenting at a conference.",
-      "imageUrl": "https://images.unsplash.com/photo-1568983268695-74a04650c8b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb25mZXJlbmNlJTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc1OTAwNTM2NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "conference presentation"
+      "description": "A person presenting at a tech conference.",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "tech conference"
     },
     {
       "id": "gallery-2",
-      "description": "A picture from a United Nations event.",
-      "imageUrl": "https://images.unsplash.com/photo-1695717129117-59298b61f2d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8VU4lMjBldmVudHxlbnwwfHx8fDE3NTkwNzU5MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "UN event"
+      "description": "A modern office space with minimalist design.",
+      "imageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "modern office"
     },
     {
       "id": "gallery-3",
-      "description": "Working on a robotics project in a lab.",
-      "imageUrl": "https://images.unsplash.com/photo-1696835196629-ebfe1fb68f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyb2JvdGljcyUyMGxhYnxlbnwwfHx8fDE3NTkwNzU5MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A robotics arm in a clean, brightly-lit laboratory.",
+      "imageUrl": "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "robotics lab"
     },
     {
       "id": "gallery-4",
-      "description": "A team photo from a web development hackathon.",
-      "imageUrl": "https://images.unsplash.com/photo-1563461660947-507ef49e9c47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVhbSUyMGhhY2thdGhvbnxlbnwwfHx8fDE3NTkwNzU5MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "team hackathon"
+      "description": "A team collaborating on a project with laptops.",
+      "imageUrl": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "team collaboration"
     }
   ]
 }
