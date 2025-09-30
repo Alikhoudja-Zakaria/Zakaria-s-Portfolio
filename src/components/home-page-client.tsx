@@ -76,7 +76,7 @@ export function HomePageClient() {
       <div className="relative">
         {/* Mobile Background */}
         <div
-          className="fixed inset-0 w-full h-screen text-white md:hidden"
+          className="fixed inset-0 w-full h-screen md:hidden"
           style={{
             backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759270120/698164c7-8539-4892-8e6e-94a20e1c8560_a2bopu.jpg')`,
             backgroundSize: 'cover',
@@ -85,7 +85,7 @@ export function HomePageClient() {
         />
         {/* Desktop Background */}
         <div
-          className="hidden md:block fixed inset-0 w-full h-screen text-white"
+          className="hidden md:block fixed inset-0 w-full h-screen"
           style={{
             backgroundImage: `url('https://res.cloudinary.com/dof5da1cj/image/upload/v1759251142/0a86c7d3-db4b-4f0a-a79b-01d6a459d0f9_eucmg8.jpg')`,
             backgroundSize: 'cover',
@@ -106,10 +106,10 @@ export function HomePageClient() {
 
 
         <main 
-          className="relative container mx-auto px-4 md:px-6 py-24 text-white" 
-          style={{ marginTop: '100vh' }}
+          className="relative bg-background container mx-auto px-4 md:px-6 py-24" 
+          style={{ marginTop: 'calc(100vh + 4rem)' }}
         >
-            <Card className="mb-12 bg-black/20 border-white/20">
+            <Card className="mb-12">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Key Accomplishments</CardTitle>
               </CardHeader>
@@ -117,7 +117,7 @@ export function HomePageClient() {
                 <section id="accomplishments" className="w-full">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {accomplishments.map((item) => (
-                      <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-shadow duration-300 hover:shadow-lg bg-black/20 border-white/20">
+                      <Card key={item.title} className="flex flex-col items-center justify-center text-center gap-4 p-6 transition-shadow duration-300 hover:shadow-lg">
                         {item.imageUrl && (
                           <div className="flex-shrink-0 p-4 bg-white/90 rounded-md">
                             <Image
@@ -131,7 +131,7 @@ export function HomePageClient() {
                         )}
                         <div className='mt-4'>
                           <CardTitle className={`font-semibold mb-2 ${item.title === 'UN Representative' ? 'text-2xl' : 'text-xl'}`}>{item.title}</CardTitle>
-                          <p className={`text-white/80 ${item.title === 'UN Representative' ? 'text-lg' : 'text-base'}`}>{item.description}</p>
+                          <p className={`text-muted-foreground ${item.title === 'UN Representative' ? 'text-lg' : 'text-base'}`}>{item.description}</p>
                         </div>
                       </Card>
                     ))}
@@ -140,7 +140,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-black/20 border-white/20">
+            <Card className="mb-12">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Features</CardTitle>
               </CardHeader>
@@ -148,7 +148,7 @@ export function HomePageClient() {
                 <section id="features" className="w-full">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature) => (
-                      <Card key={feature.title} className="flex flex-col text-center items-center transition-shadow duration-300 hover:shadow-lg bg-black/20 border-white/20">
+                      <Card key={feature.title} className="flex flex-col text-center items-center transition-shadow duration-300 hover:shadow-lg">
                         <CardHeader>
                           <div className="flex justify-center items-center">
                             <feature.icon className="w-10 h-10 text-primary mb-4" />
@@ -156,7 +156,7 @@ export function HomePageClient() {
                           <CardTitle>{feature.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-white/80">{feature.description}</p>
+                          <p className="text-muted-foreground">{feature.description}</p>
                         </CardContent>
                       </Card>
                     ))}
@@ -165,13 +165,13 @@ export function HomePageClient() {
               </CardContent>
             </Card>
             
-            <Card className="mb-12 bg-black/20 border-white/20">
+            <Card className="mb-12">
               <CardContent className="pt-6">
                 <section id="ai-glasses-details" className="w-full">
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
                       <div className="space-y-4">
                           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Project Spotlight: AI Glasses</h2>
-                          <p className="text-lg text-white/80">
+                          <p className="text-lg text-muted-foreground">
                               This project explored wearable augmented intelligence, focusing on a voice-activated assistant to enhance daily life. We combined hardware prototyping, embedded systems, and machine learning to create a device that felt like an extension of one's own capabilities.
                           </p>
                       </div>
@@ -188,7 +188,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-black/20 border-white/20">
+            <Card className="mb-12">
               <CardContent className="pt-6">
                 <section id="web-dev-details" className="w-full">
                   <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -202,7 +202,7 @@ export function HomePageClient() {
                       />
                       <div className="space-y-4">
                           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Expertise in Web Development</h2>
-                          <p className="text-lg text-white/80">
+                          <p className="text-lg text-muted-foreground">
                               I specialize in full-stack development, with a strong command of React, Next.js, and Node.js. My philosophy is to build applications that are not just functional but also scalable, maintainable, and performant, with a commitment to quality and an eye for detail.
                           </p>
                       </div>
@@ -211,7 +211,7 @@ export function HomePageClient() {
               </CardContent>
             </Card>
 
-            <Card className="mb-12 bg-black/20 border-white/20">
+            <Card className="mb-12">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Selected Work</CardTitle>
               </CardHeader>
@@ -220,7 +220,7 @@ export function HomePageClient() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map(project => (
                         <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
-                            <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg bg-black/20 border-white/20">
+                            <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg">
                                 <CardHeader className="p-0">
                                     <Image
                                         src={project.imageUrl || ''}
@@ -233,7 +233,7 @@ export function HomePageClient() {
                                 </CardHeader>
                                 <CardContent className="p-6">
                                     <CardTitle className="mb-2 text-lg font-semibold">{project.title}</CardTitle>
-                                    <CardDescription className="text-white/80">{project.description}</CardDescription>
+                                    <CardDescription className="text-muted-foreground">{project.description}</CardDescription>
                                 </CardContent>
                             </Card>
                         </Link>
@@ -248,7 +248,7 @@ export function HomePageClient() {
               </CardFooter>
             </Card>
 
-            <Card className="bg-black/20 border-white/20">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">Gallery</CardTitle>
               </CardHeader>
