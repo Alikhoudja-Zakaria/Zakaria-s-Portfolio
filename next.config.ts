@@ -57,6 +57,12 @@ const nextConfig: NextConfig = {
         hostname: 'thesocietyofnlp.org',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pbs.twimg.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
@@ -67,3 +73,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+    

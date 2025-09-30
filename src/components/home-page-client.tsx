@@ -4,14 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, Code, Palette, Server, Sparkles } from 'lucide-react';
+import { Code, Palette, Server, Sparkles } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const accomplishments = [
   { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State.' },
   { title: 'UN Representative', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Logo_of_the_United_Nations.svg/1024px-Logo_of_the_United_Nations.svg.png', description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
   { title: 'NLP Certified', imageUrl: 'https://thesocietyofnlp.org/wp-content/uploads/2024/05/LogoSocietyNLP.png', description: 'Certified in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
-  { title: 'Robotics Winner', icon: Bot, description: 'Won "Best Robot Design" at the FLL Robotics Competition in Qatar.' },
+  { title: 'Robotics Winner', imageUrl: 'https://pbs.twimg.com/media/G2AP-_qXEAAhO2B.png', description: 'Won "Best Robot Design" at the FLL Robotics Competition in Qatar.' },
 ];
 
 const features = [
@@ -282,3 +282,5 @@ export function HomePageClient() {
     </>
   );
 }
+
+    
