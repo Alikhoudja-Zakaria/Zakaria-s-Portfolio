@@ -11,7 +11,7 @@
     --background: 0 0% 98%; /* Light Gray, Apple-like */
     --foreground: 0 0% 10%; /* Dark Gray for text */
     
-    --card: 90 4% 88% / 0.93; /* Greyish White with 7% transparency */
+    --card: 80 4% 88%; /* Solid Greyish White */
     --card-foreground: 0 0% 10%;
     
     --popover: 0 0% 100%;
