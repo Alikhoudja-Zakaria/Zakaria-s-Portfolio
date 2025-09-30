@@ -84,7 +84,7 @@ const DescriptionWithFlags = ({ text }: { text: string }) => {
         return <>{elements}</>;
     };
 
-    return <span className="text-muted-foreground">{renderText(text)}</span>;
+    return <span className="text-gray-200">{renderText(text)}</span>;
 };
 
 const featureCategories = [
@@ -158,7 +158,7 @@ export default function Home() {
         <section id="hero-content" className="w-full h-screen flex items-start pt-32 bg-transparent text-white">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="md:w-1/2 lg:w-2/3">
-                    <div className="space-y-4 p-8 rounded-lg bg-black/30 backdrop-blur-sm">
+                    <div className="space-y-4 p-8 rounded-lg bg-card/60 backdrop-blur-lg">
                         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
                             Zakaria Alikhoudja
                         </h1>
@@ -190,7 +190,7 @@ export default function Home() {
                     <CardTitle className="font-headline">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                    <p className="text-gray-200"><DescriptionWithFlags text={item.description} /></p>
+                    <DescriptionWithFlags text={item.description} />
                 </CardContent>
                 {item.seeMoreLink && (
                     <CardFooter>
@@ -212,7 +212,7 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-4">Project Spotlight: AI Glasses</h2>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg" style={{ color: '#9B9B9B' }}>
                     The AI Glasses project was an exploration into the potential of wearable augmented intelligence. The goal was to create a non-intrusive, voice-activated assistant that could provide real-time information, manage tasks, and enhance daily life through a seamless interface. We focused on low-power processing, natural language understanding, and a minimalist heads-up display to create a device that felt like an extension of one's own capabilities, rather than a piece of technology. This project combined hardware prototyping, embedded systems programming, and machine learning model optimization.
                 </p>
                 </div>
@@ -339,5 +339,3 @@ export default function Home() {
     </>
   );
 }
-
-    
