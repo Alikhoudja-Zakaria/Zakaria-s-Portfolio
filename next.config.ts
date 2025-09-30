@@ -63,6 +63,12 @@ const nextConfig: NextConfig = {
         hostname: 'pbs.twimg.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
