@@ -39,11 +39,3 @@ export function AnimatedIntro() {
     </div>
   );
 }
-
-// Add this to tailwind.config.ts animation key
-// 'fade-in-out': {
-//   '0%, 100%': { opacity: '0' },
-//   '50%': { opacity: '1' },
-// },
-// and this to keyframes
-// 'fade-in-out': 'fade-in-out 2.5s ease-in-out forwards',
