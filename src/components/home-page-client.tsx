@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 
 const accomplishments = [
   { title: 'US Alumni', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png', description: 'Participated in the Youth Leadership Program with Algeria, sponsored by the U.S. Department of State.' },
-  { title: 'UN Representative', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Logo_of_the_United_Nations.svg/1024px-Logo_of_the_United_Nations.svg.png', description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
+  { title: 'UN Representative', imageUrl: 'https://res.cloudinary.com/dof5da1cj/image/upload/v1769730226/1024px-Logo_of_the_United_Nations_uga2m7.webp', description: 'Served as a youth ambassador for Algeria at the United Nations, representing the nation in the DISEC committee.' },
   { title: 'NLP Certified', imageUrl: 'https://thesocietyofnlp.org/wp-content/uploads/2024/05/LogoSocietyNLP.png', description: 'Certified in Neuro-Linguistic Programming by co-creator Dr. Richard Bandler.' },
   { title: 'Robotics Winner', imageUrl: 'https://pbs.twimg.com/media/G2AP-_qXEAAhO2B.png', description: 'Won "Best Robot Design" at the FLL Robotics Competition in Qatar.' },
 ];
@@ -154,7 +154,7 @@ export function HomePageClient() {
                               src={item.imageUrl}
                               alt={`${item.title} logo`}
                               width={item.title === 'UN Representative' ? 200 : 120}
-                              height={item.title === 'UN Representative' ? 200 : 120}
+                              height={item.title === 'UN Representative' ? 195 : 120}
                               className="object-contain"
                             />
                           </div>
@@ -306,5 +306,3 @@ export function HomePageClient() {
     </>
   );
 }
-
-    
