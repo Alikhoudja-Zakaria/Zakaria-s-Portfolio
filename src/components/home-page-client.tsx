@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatedIntro } from '@/components/animated-intro';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Palette, Server, Sparkles } from 'lucide-react';
+import { Code, Palette, Server, Sparkles, ArrowUpRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 
@@ -44,26 +44,20 @@ const projects = [
     {
       id: "project-group-frenchy",
       title: "Groupe Frenchy",
-      description: "UI/UX Development for a corporate group.",
-      imageUrl: PlaceHolderImages.find(p => p.id === 'project-corporate-site')?.imageUrl || '',
+      description: "Created a website for Groupe Frenchy, focusing on UI/UX Development.",
       link: "https://group-frenchy.com",
-      imageHint: "corporate website"
     },
     {
       id: "project-e-commerce",
       title: "Khadidja's E-commerce",
-      description: "A small-scale online retail platform.",
-      imageUrl: PlaceHolderImages.find(p => p.id === 'project-ecommerce-site')?.imageUrl || '',
+      description: "Developed a small-scale online retail platform.",
       link: "https://khadidjaa.vercel.app/",
-      imageHint: "online store"
     },
     {
       id: "project-portfolio-editor",
       title: "Amine Editor Portfolio",
-      description: "Portfolio for an independent video editor.",
-      imageUrl: PlaceHolderImages.find(p => p.id === 'project-portfolio-site')?.imageUrl || '',
+      description: "Built a portfolio website for an independent video editor.",
       link: "https://amine-editor.vercel.app",
-      imageHint: "video editor portfolio"
     }
 ];
 
@@ -153,8 +147,8 @@ export function HomePageClient() {
                             <Image
                               src={item.imageUrl}
                               alt={`${item.title} logo`}
-                              width={item.title === 'UN Representative' ? 200 : 120}
-                              height={item.title === 'UN Representative' ? 195 : 120}
+                              width={item.title === 'UN Representative' ? 260 : 120}
+                              height={item.title === 'UN Representative' ? 254 : 120}
                               className="object-contain"
                             />
                           </div>
@@ -247,27 +241,24 @@ export function HomePageClient() {
               </CardHeader>
               <CardContent>
                 <section id="projects" className="w-full">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map(project => (
-                        <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
-                            <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                                <CardHeader className="p-0">
-                                    <Image
-                                        src={project.imageUrl || ''}
-                                        alt={project.title}
-                                        width={600}
-                                        height={400}
-                                        className="w-full h-auto aspect-video object-cover"
-                                        data-ai-hint={project.imageHint}
-                                    />
-                                </CardHeader>
-                                <CardContent className="p-6">
-                                    <CardTitle className="mb-2 text-lg font-semibold text-card-foreground">{project.title}</CardTitle>
-                                    <CardDescription className="text-muted-foreground">{project.description}</CardDescription>
-                                </CardContent>
-                            </Card>
-                        </Link>
-                    ))}
+                    <div className="max-w-3xl mx-auto">
+                        <ul className="space-y-4">
+                        {projects.map(project => (
+                            <li key={project.id}>
+                                <Link href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
+                                    <Card className="transition-all duration-300 hover:shadow-lg hover:bg-muted/50">
+                                        <CardContent className="p-6 flex items-center gap-6">
+                                            <div className="flex-grow">
+                                                <CardTitle className="mb-1 text-lg font-semibold text-card-foreground">{project.title}</CardTitle>
+                                                <CardDescription className="text-muted-foreground">{project.description}</CardDescription>
+                                            </div>
+                                            <ArrowUpRight className="h-6 w-6 text-muted-foreground transition-transform group-hover:rotate-45 group-hover:text-primary" />
+                                        </CardContent>
+                                    </Card>
+                                </Link>
+                            </li>
+                        ))}
+                        </ul>
                     </div>
                 </section>
               </CardContent>
