@@ -8,10 +8,11 @@ import { useState } from 'react';
 
 const NavLinks = ({ onLinkClick, className }: { onLinkClick?: () => void; className?: string }) => (
     <>
-        <Link href="#accomplishments" onClick={onLinkClick} className={className}>Accomplishments</Link>
-        <Link href="#projects" onClick={onLinkClick} className={className}>Work</Link>
-        <Link href="#gallery" onClick={onLinkClick} className={className}>Gallery</Link>
-        <Link href="#contact" onClick={onLinkClick} className={className}>Contact</Link>
+        <Link href="/#accomplishments" onClick={onLinkClick} className={className}>Accomplishments</Link>
+        <Link href="/#projects" onClick={onLinkClick} className={className}>Work</Link>
+        <Link href="/know-more" onClick={onLinkClick} className={className}>Know More</Link>
+        <Link href="/#gallery" onClick={onLinkClick} className={className}>Gallery</Link>
+        <Link href="/#contact" onClick={onLinkClick} className={className}>Contact</Link>
     </>
 );
 

@@ -126,6 +126,11 @@ export function HomePageClient() {
             <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white px-4">
               A 17-year-old developer from Algeria, I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
             </p>
+            <div className="mt-8">
+                <Button asChild size="lg">
+                    <Link href="/know-more">Know More</Link>
+                </Button>
+            </div>
           </section>
         </div>
 
