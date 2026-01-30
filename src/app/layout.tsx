@@ -14,6 +14,9 @@ const workSans = Work_Sans({
 export const metadata: Metadata = {
   title: 'Zakaria Alikhoudja Portfolio',
   description: 'The personal portfolio of Zakaria Alikhoudja, showcasing skills in AI, robotics, and web development.',
+  icons: {
+    icon: 'https://res.cloudinary.com/dof5da1cj/image/upload/v1769731774/Gemini_Generated_Image_gqroougqroougqro_f4ojm6.png',
+  },
 };
 
 export default function RootLayout({
