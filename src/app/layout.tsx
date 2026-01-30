@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   description: 'The personal portfolio of Zakaria Alikhoudja, showcasing skills in AI, robotics, and web development.',
   icons: {
     icon: 'https://res.cloudinary.com/dof5da1cj/image/upload/v1769731774/Gemini_Generated_Image_gqroougqroougqro_f4ojm6.png',
+    shortcut: 'https://res.cloudinary.com/dof5da1cj/image/upload/v1769731774/Gemini_Generated_Image_gqroougqroougqro_f4ojm6.png',
+    apple: 'https://res.cloudinary.com/dof5da1cj/image/upload/v1769731774/Gemini_Generated_Image_gqroougqroougqro_f4ojm6.png',
   },
   verification: {
     google: 'googlec3d94fc5cab87112',
