@@ -127,9 +127,9 @@ export function HomePageClient() {
               A 17-year-old developer from Algeria, I build modern, user-friendly, and scalable web solutions. From sleek portfolios to AI-integrated platforms, my work combines clean code with thoughtful design to create meaningful digital experiences.
             </p>
             <div className="mt-8">
-                <Button asChild size="lg">
-                    <Link href="/know-more">Know More</Link>
-                </Button>
+                <Link href="/know-more" className="text-lg text-white hover:text-gray-200 transition-colors inline-flex items-center group">
+                    Know More <span className="ml-2 transition-transform group-hover:translate-x-1">&gt;</span>
+                </Link>
             </div>
           </section>
         </div>
@@ -302,3 +302,5 @@ export function HomePageClient() {
     </>
   );
 }
+
+    
