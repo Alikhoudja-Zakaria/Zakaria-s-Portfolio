@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     apple: 'https://res.cloudinary.com/dof5da1cj/image/upload/v1769731774/Gemini_Generated_Image_gqroougqroougqro_f4ojm6.png',
   },
   verification: {
-    google: 'googlec3d94fc5cab87112',
+    google: '_Z8XnNVhwv1vuKu1Hjqfha2hiYvODXrdM6cLsZqkoSs',
   },
 };
 
