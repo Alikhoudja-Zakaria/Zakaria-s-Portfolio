@@ -37,6 +37,15 @@
     --ring: 217 91% 60%;
     
     --radius: 0.8rem;
+
+    --matte-blue: 217 50% 92%;
+    --matte-blue-foreground: 217 30% 30%;
+    --matte-green: 145 40% 90%;
+    --matte-green-foreground: 145 30% 25%;
+    --matte-yellow: 48 60% 90%;
+    --matte-yellow-foreground: 48 40% 25%;
+    --matte-teal: 170 40% 90%;
+    --matte-teal-foreground: 170 30% 25%;
   }
 }
  

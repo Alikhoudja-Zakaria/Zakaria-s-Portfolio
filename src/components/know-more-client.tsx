@@ -133,6 +133,13 @@ const certifications = [
   'Ambassadorship: HundrED Youth Ambassador',
 ];
 
+const badgeColorVariants = [
+    "matte-blue",
+    "matte-green",
+    "matte-yellow",
+    "matte-teal",
+] as const;
+
 export function KnowMoreClient() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -193,11 +200,13 @@ export function KnowMoreClient() {
                 <CardTitle className="flex items-center gap-2"><Cpu /> Skills</CardTitle>
               </CardHeader>
               <CardContent>
-                {Object.entries(skills).map(([category, skillList]) => (
+                {Object.entries(skills).map(([category, skillList], categoryIndex) => (
                     <div key={category} className="mb-4">
                         <h4 className="font-semibold mb-2">{category}</h4>
                         <div className="flex flex-wrap gap-2">
-                        {skillList.map((skill) => <Badge key={skill} variant="secondary">{skill}</Badge>)}
+                        {skillList.map((skill, skillIndex) => (
+                            <Badge key={skill} variant={badgeColorVariants[(categoryIndex + skillIndex) % badgeColorVariants.length]}>{skill}</Badge>
+                        ))}
                         </div>
                     </div>
                 ))}
