@@ -7,7 +7,7 @@ import {
   Mail,
   Phone,
   Linkedin,
-  MapPin,
+  Instagram,
   Award,
   BookOpen,
   Cpu,
@@ -173,10 +173,10 @@ export function KnowMoreClient() {
                   <Linkedin className="h-4 w-4" />
                   <span>LinkedIn Profile</span>
                 </a>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4" />
-                  <span>03000-Laghouat-Algeria</span>
-                </div>
+                <a href="https://www.instagram.com/alikhoudja_zakaria" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary">
+                  <Instagram className="h-4 w-4" />
+                  <span>@alikhoudja_zakaria</span>
+                </a>
               </CardContent>
             </Card>
             
