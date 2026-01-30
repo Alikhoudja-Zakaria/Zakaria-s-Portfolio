@@ -35,7 +35,7 @@ const professionalExperience = [
     ],
   },
   {
-    logoUrl: 'https://res.cloudinary.com/dof5da1cj/image/upload/v1769730226/1024px-Logo_of_the_United_Nations_uga2m7.webp',
+    logoUrl: 'https://res.cloudinary.com/dof5da1cj/image/upload/v1769732783/7c6042d4-b353-45ed-a4d6-a720cd381cec.png',
     title: 'Distinguished Delegate',
     company: 'Istanbul International Model United Nations',
     date: '2025',
